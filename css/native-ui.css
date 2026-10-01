@@ -46,6 +46,7 @@
 .screen.large-text .home { gap:22px; }
 .screen.large-text .home .app-label { font-size:calc(11px * var(--text-scale)); }
 .screen :is(button,a,input,textarea,select,[tabindex]):focus-visible { outline:3px solid var(--ios-blue); outline-offset:3px; }
+.screen .spotlight-search input:focus-visible { outline:none; }
 .screen .open-pill:is(button),.screen .get-pill:is(button) { position:relative; }
 .screen .open-pill:is(button)::after,.screen .get-pill:is(button)::after { content:""; position:absolute; inset:-6px 0; }
 html[data-theme="light"] .screen { --secondary-label:#62626b; }
