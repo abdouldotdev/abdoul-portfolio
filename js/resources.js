@@ -21,7 +21,7 @@ window.ResourceLibrary = (() => {
   return data.resources.filter(r=>r&&typeof r.id==='string'&&typeof r.title==='string'&&r.title.trim()&&safeURL(r.link)).map(r=>({...r,link:safeURL(r.link),download:safeURL(r.download),cover:safeURL(r.cover),description:typeof r.description==='string'?r.description:'',categoryIds:Array.isArray(r.categoryIds)?r.categoryIds.filter(id=>typeof id==='string'):[],pages:Number.isSafeInteger(r.pages)&&r.pages>0?r.pages:null}));
  }
  function titleFor(r){return resourceData.translations[r.id]?.[locale]?.title||r.title}
- function shareURL(r){const url=new URL(resourceData.shareBase);url.searchParams.set('resource',r.id);return url.href}
+ function shareURL(r){return new URL(`resources/${encodeURIComponent(r.id)}`,resourceData.shareBase).href}
  function render(){
   list.replaceChildren();const c=copy();
   const visible=activeCategory?items.filter(r=>r.categoryIds.includes(activeCategory)):items;

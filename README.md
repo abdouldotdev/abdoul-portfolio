@@ -59,6 +59,8 @@ Puis ouvrir http://localhost:8000.
 
 `js/resources.js` charge la collection à l’ouverture. Les documents PDF s’ouvrent dans le portfolio, avec défilement continu, texte sélectionnable, zoom et téléchargement visible en permanence. PDF.js 5.4.624 (Apache-2.0, licence dans `assets/vendor/pdfjs/LICENSE`) est chargé uniquement à l’ouverture d’un PDF ; les pages proches du viewport sont rendues séquentiellement. La fermeture libère le document et les URL temporaires.
 
+Les liens de partage `/resources/:id` passent par `api/resource-preview.js` : les aperçus sociaux utilisent la couverture fournie par l’API, puis le navigateur ouvre le lecteur du portfolio.
+
 Le serveur doit autoriser CORS sur l’API et les PDF (`Access-Control-Allow-Origin: *` pour ces fichiers publics). Cette configuration a été vérifiée sur l’endpoint réel. Le lecteur ne dépend pas d’une iframe : `X-Frame-Options: DENY` peut rester en place. Une copie locale du guide permet une lecture de secours si le serveur est indisponible. Servir le portfolio via HTTP(S), pas `file://`.
 
 Vérification : `node tests/resources.cjs`.

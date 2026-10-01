@@ -39,7 +39,7 @@ const server=http.createServer((req,res)=>{const file=path.join(root,new URL(req
   assert.equal((await fs.promises.readFile(await download.path())).subarray(0,5).toString(),'%PDF-');
   await page.evaluate(()=>Object.defineProperty(navigator,'share',{configurable:true,value:async data=>{window.sharedResource=data}}));
   await page.locator('#pdfShare').click();
-  assert.equal(await page.evaluate(()=>window.sharedResource.url),'https://www.abdoul.dev/?resource=guide-motion-design-publicitaire');
+  assert.equal(await page.evaluate(()=>window.sharedResource.url),'https://www.abdoul.dev/resources/guide-motion-design-publicitaire');
   await page.goto(`http://127.0.0.1:${server.address().port}/?resource=guide-motion-design-publicitaire`);
   await page.waitForSelector('.pdf-page[data-rendered="true"]');
   assert.equal(await page.locator('#readerTitle').textContent(),'Guide motion design publicitaire');
