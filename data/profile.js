@@ -1,6 +1,6 @@
 // Edit contact details and social URLs here. Empty social URLs remain unavailable.
 const profileData = {
- avatar: 'assets/images/abdoul.png',
+ avatar: 'assets/images/abdoul-about.png',
  contact: {
   email: 'hey@abdoul.dev',
   whatsapp: '22658266534', // International format, digits only.
