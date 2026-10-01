@@ -6,7 +6,7 @@ window.ResourceLibrary = (() => {
  let download=document.getElementById('pdfDownload');
  const zoomButton=document.getElementById('pdfZoom'),shareButton=document.getElementById('pdfShare');
  const progress=document.getElementById('pdfProgress');
- let items=[],categories=[],activeCategory='',state='idle',loading=false,loaded=false,current=null,loadingTask=null,pdf=null;
+ let items=[],categories=[],activeCategory='',state='idle',loading=false,loaded=false,loadPromise=null,current=null,loadingTask=null,pdf=null;
  let generation=0,layoutPass=0,observer=null,zoom=1,blobURL='',pdfModule=null,renderQueue=Promise.resolve();
  const labels={
   fr:{loading:'Chargement des ressources…',empty:'De nouvelles ressources arrivent bientôt.',emptyCategory:'Aucune ressource dans cette catégorie pour le moment.',all:'Tout',categories:'Catégories',error:'Impossible de charger la collection.',saved:'Collection enregistrée',retry:'Actualiser',read:'Lire le guide',open:'Ouvrir la ressource',download:'Télécharger',share:'Partager',copied:'Lien copié',reader:'Lecture',pages:'pages',pdfLoading:'Ouverture du document…',pdfError:'Le document ne peut pas être affiché. Vous pouvez le télécharger ou réessayer.',zoom:'Agrandir le document',original:'Document original en français'},
@@ -21,6 +21,7 @@ window.ResourceLibrary = (() => {
   return data.resources.filter(r=>r&&typeof r.id==='string'&&typeof r.title==='string'&&r.title.trim()&&safeURL(r.link)).map(r=>({...r,link:safeURL(r.link),download:safeURL(r.download),cover:safeURL(r.cover),description:typeof r.description==='string'?r.description:'',categoryIds:Array.isArray(r.categoryIds)?r.categoryIds.filter(id=>typeof id==='string'):[],pages:Number.isSafeInteger(r.pages)&&r.pages>0?r.pages:null}));
  }
  function titleFor(r){return resourceData.translations[r.id]?.[locale]?.title||r.title}
+ function shareURL(r){const url=new URL(resourceData.shareBase);url.searchParams.set('resource',r.id);return url.href}
  function render(){
   list.replaceChildren();const c=copy();
   const visible=activeCategory?items.filter(r=>r.categoryIds.includes(activeCategory)):items;
@@ -48,16 +49,27 @@ window.ResourceLibrary = (() => {
   }
   UIComponents.mount();
  }
- async function load(){
-  if(loading||loaded)return;
+ function load(){
+  if(loaded)return Promise.resolve();
+  if(loadPromise)return loadPromise;
   loading=true;state='loading';render();
-  try{
-   const response=await fetch(resourceData.endpoint,{credentials:'omit',signal:AbortSignal.timeout(10000)});
-   if(!response.ok)throw Error('Resource request failed');
-   items=validate(await response.json());loaded=true;state='ready';
-  }catch{
-   items=validate({version:1,resources:resourceData.fallback,categories:resourceData.categories});state=items.length?'saved':'error';
-  }finally{loading=false;render()}
+  loadPromise=(async()=>{
+   try{
+    const response=await fetch(resourceData.endpoint,{credentials:'omit',signal:AbortSignal.timeout(10000)});
+    if(!response.ok)throw Error('Resource request failed');
+    items=validate(await response.json());loaded=true;state='ready';
+   }catch{
+    items=validate({version:1,resources:resourceData.fallback,categories:resourceData.categories});state=items.length?'saved':'error';
+   }finally{loading=false;loadPromise=null;render()}
+  })();
+  return loadPromise;
+ }
+ async function openShared(id){
+  openPage('resources');
+  await load();
+  if(!document.getElementById('resourcesPage').classList.contains('active'))return;
+  const resource=items.find(item=>item.id===id);
+  if(resource&&resource.mimeType==='application/pdf')open(resource);
  }
  function configureDownload(link,r){
   link.href=r.download||r.link;link.download=r.id+'.pdf';
@@ -147,14 +159,17 @@ window.ResourceLibrary = (() => {
  zoomButton.addEventListener('click',async()=>{if(!pdf)return;zoom=zoom===1?1.5:zoom===1.5?2:1;zoomButton.textContent=Math.round(zoom*100)+'%';await layout(await pdfModule,generation)});
  shareButton.addEventListener('click',async()=>{
   if(!current)return;
-  if(navigator.share){try{await navigator.share({title:titleFor(current),url:current.link});return}catch(error){if(error.name==='AbortError')return}}
-  try{await navigator.clipboard.writeText(current.link);shareButton.textContent=copy().copied;setTimeout(()=>shareButton.textContent=copy().share,2200)}
-  catch{window.open(current.link,'_blank','noopener,noreferrer')}
+  const url=shareURL(current);
+  if(navigator.share){try{await navigator.share({title:titleFor(current),url});return}catch(error){if(error.name==='AbortError')return}}
+  try{await navigator.clipboard.writeText(url);shareButton.textContent=copy().copied;setTimeout(()=>shareButton.textContent=copy().share,2200)}
+  catch{window.open(url,'_blank','noopener,noreferrer')}
  });
   retry.addEventListener('click',()=>{loaded=false;load()});
  document.getElementById('pdfRetry').addEventListener('click',()=>{if(current)open(current)});
  let resizeTimer=0,lastWidth=0;
  new ResizeObserver(()=>{const width=scroll.clientWidth;if(!pdf||!width||width===lastWidth)return;lastWidth=width;clearTimeout(resizeTimer);resizeTimer=setTimeout(async()=>{if(pdf)await layout(await pdfModule,generation)},180)}).observe(scroll);
  document.getElementById('readerPage').addEventListener('click',event=>{if(event.target.closest('[data-resource-back]'))openPage('resources')});
- return {load,localize,closeReader};
+ return {load,localize,closeReader,openShared};
 })();
+const sharedResourceId=new URLSearchParams(location.search).get('resource');
+if(sharedResourceId)setTimeout(()=>window.ResourceLibrary.openShared(sharedResourceId),0);

@@ -1,6 +1,7 @@
 // Live collection and a bundled copy available when the API is unreachable.
 const resourceData = {
   "endpoint": "https://jeli.abdoul.dev/portfolio-resources",
+  "shareBase": "https://www.abdoul.dev/",
   "fallback": [
     {
       "id": "guide-motion-design-publicitaire",

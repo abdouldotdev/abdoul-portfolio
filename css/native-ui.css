@@ -50,17 +50,16 @@
 .screen .open-pill:is(button)::after,.screen .get-pill:is(button)::after { content:""; position:absolute; inset:-6px 0; }
 html[data-theme="light"] .screen { --secondary-label:#62626b; }
 html[data-theme="dark"] .screen { --secondary-label:#b6b6c0; }
-/* Real iPhone: system chrome already exists outside the page. */
+/* The simulated Island sits below the real iPhone's safe area. */
 html.platform-ios-phone .statusbar { display:none; }
-html.platform-ios-phone .screen { --system-top:0px; }
-html.platform-ios-phone .island { display:none; }
+html.platform-ios-phone .screen { --system-top:64px; }
 html.platform-ios-phone.phone-portrait .device-stage { padding:env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left); perspective:none; background:var(--card); }
-html.platform-ios-phone.phone-portrait .screen .home { padding-top:18px; padding-bottom:18px; }
-html.platform-ios-phone .screen .spotlight-inner { padding-top:14px; }
+html.platform-ios-phone.phone-portrait .screen .home { padding-top:68px; padding-bottom:18px; }
+html.platform-ios-phone .screen .spotlight-inner { padding-top:64px; }
 /* Safari zooms focused text fields below 16 px. */
 html.platform-ios-phone .spotlight-search input { font-size:16px; }
-html.platform-ios-phone .store-top-actions { height:80px; padding-top:18px; }
-html.platform-ios-phone .store-compact { height:58px; margin-bottom:-58px; }
+html.platform-ios-phone .store-top-actions { height:126px; padding-top:64px; }
+html.platform-ios-phone .store-compact { height:104px; margin-bottom:-104px; }
 html.platform-ios-phone.phone-portrait .phone-wrap,
 html.platform-ios-phone.phone-portrait .phone-wrap:hover { position:relative; left:auto; top:auto; transform:none; transition:none; }
 html.platform-ios-phone .phone,html.platform-ios-phone .screen { border-radius:0; }

@@ -37,6 +37,12 @@ const server=http.createServer((req,res)=>{const file=path.join(root,new URL(req
   const saved=page.waitForEvent('download');await page.locator('#pdfDownload').click();
   const download=await saved;assert.equal(download.suggestedFilename(),'guide-motion-design-publicitaire.pdf');
   assert.equal((await fs.promises.readFile(await download.path())).subarray(0,5).toString(),'%PDF-');
+  await page.evaluate(()=>Object.defineProperty(navigator,'share',{configurable:true,value:async data=>{window.sharedResource=data}}));
+  await page.locator('#pdfShare').click();
+  assert.equal(await page.evaluate(()=>window.sharedResource.url),'https://www.abdoul.dev/?resource=guide-motion-design-publicitaire');
+  await page.goto(`http://127.0.0.1:${server.address().port}/?resource=guide-motion-design-publicitaire`);
+  await page.waitForSelector('.pdf-page[data-rendered="true"]');
+  assert.equal(await page.locator('#readerTitle').textContent(),'Guide motion design publicitaire');
   await page.locator('[data-resource-back]').click();
   assert.equal(await page.locator('.pdf-page').count(),0);
   await page.evaluate(()=>setLanguage('en'));
@@ -57,6 +63,6 @@ const server=http.createServer((req,res)=>{const file=path.join(root,new URL(req
   assert.equal(await page.locator('.resource-card').count(),1);assert.equal(await page.locator('.resource-card img').count(),0);
   assert.equal(await page.locator('.resource-card h2').textContent(),'<img src=x onerror=alert(1)>');
   assert.deepEqual(errors,[]);
-  console.log('Resources: lazy load, PDF text/zoom/scroll/download/reopen, FR/EN, offline/empty, unsafe data: OK');
+  console.log('Resources: lazy load, PDF text/zoom/scroll/download/share/deep link, FR/EN, offline/empty, unsafe data: OK');
  }finally{await browser.close();server.close()}
 })().catch(error=>{console.error(error);server.close();process.exitCode=1});
