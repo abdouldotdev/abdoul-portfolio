@@ -48,7 +48,17 @@
     "hero": "assets/screenshots/cutiz-hero.webp",
     "url": "https://cutiz.app",
     "status": "in-development",
-    "completionPercent": 95
+    "completionPercent": 95,
+    "videos": {
+      "fr": {
+        "desktop": "https://pub-605e2a68f06f491e83112d464b1a569c.r2.dev/cutiz-motion-fr_hero-1x1_1080x1080_v4.mp4",
+        "mobile": "https://pub-605e2a68f06f491e83112d464b1a569c.r2.dev/cutiz-motion-fr_mobile-9x16_1080x1920_v4.mp4"
+      },
+      "en": {
+        "desktop": "https://pub-605e2a68f06f491e83112d464b1a569c.r2.dev/cutiz-motion-en_hero-1x1_1080x1080_v4.mp4",
+        "mobile": "https://pub-605e2a68f06f491e83112d464b1a569c.r2.dev/cutiz-motion-en_mobile-9x16_1080x1920_v4.mp4"
+      }
+    }
   },
   "metrics": {
     "users": null,

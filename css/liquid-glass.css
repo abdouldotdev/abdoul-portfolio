@@ -64,3 +64,29 @@ html[data-theme] .screen :is(.get-pill,.native-back).glass-surface {
 }
 
 html[data-theme] .screen .ui-switch i.glass-surface { box-shadow:0 1px 3px rgba(0,0,0,.2); border:0; }
+
+/* A denser, reflective material keeps the home dock distinct from the wallpaper. */
+html[data-theme] .screen .home-dock.glass-surface {
+ --glass-opacity:.7; --glass-blur:8px; --glass-edge:rgba(255,255,255,.46);
+ position:relative; isolation:isolate; overflow:hidden;
+ background:linear-gradient(145deg,rgba(255,255,255,.22),rgba(var(--glass-rgb),.64) 40%,rgba(var(--glass-rgb),.76));
+ border-color:var(--glass-edge);
+ box-shadow:inset 0 1px 0 rgba(255,255,255,.55),inset 0 -1px 0 rgba(255,255,255,.12),0 12px 30px rgba(0,0,0,.24);
+}
+html[data-theme] .screen .home-dock::before {
+ content:""; position:absolute; z-index:0; inset:1px; border-radius:inherit; pointer-events:none;
+ background:linear-gradient(135deg,rgba(255,255,255,.2),transparent 34%,rgba(255,255,255,.035) 68%,rgba(255,255,255,.1));
+}
+html[data-theme] .screen .home-dock::after {
+ content:""; position:absolute; z-index:0; top:1px; left:9%; right:9%; height:1px; pointer-events:none;
+ background:linear-gradient(90deg,transparent,rgba(255,255,255,.82),transparent);
+}
+html[data-theme] .screen .home-dock .dock-action { position:relative; z-index:1; }
+html[data-theme="light"] .screen .home-dock.glass-surface {
+ --glass-rgb:239,246,250; --glass-edge:rgba(255,255,255,.92);
+ background:linear-gradient(145deg,rgba(255,255,255,.78),rgba(236,245,249,.76) 48%,rgba(222,238,241,.82));
+ box-shadow:inset 0 1px 0 rgba(255,255,255,.98),inset 0 -1px 0 rgba(255,255,255,.55),0 12px 28px rgba(28,48,62,.16);
+}
+@media (prefers-reduced-transparency:reduce) {
+ html[data-theme] .screen .home-dock.glass-surface { background:rgb(var(--glass-rgb)); }
+}

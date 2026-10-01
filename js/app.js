@@ -18,6 +18,8 @@ const iconPaths = {
  check: '<path d="m5 12 4.5 4.5L19 7"/>',
  heart: '<path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8l1.1 1.1L12 21l7.8-7.5 1.1-1.1a5.5 5.5 0 0 0-.1-7.8Z"/>',
  play: '<path d="m9 5 11 7-11 7Z" fill="currentColor" stroke="none"/>',
+ volume: '<path d="M4 9h4l5-4v14l-5-4H4zM16 9a4 4 0 0 1 0 6M18 6a8 8 0 0 1 0 12"/>',
+ 'volume-off': '<path d="M4 9h4l5-4v14l-5-4H4zM17 9l5 6m0-6-5 6"/>',
  nana: '<path d="m12 3 7 7a5 5 0 0 1 0 7l-3 3a5 5 0 0 1-7 0l-6-6" stroke-width="3"/>',
  wallet: '<path d="M20 7V5a2 2 0 0 0-2-2H6a3 3 0 0 0-3 3v12a3 3 0 0 0 3 3h14a1 1 0 0 0 1-1V8a1 1 0 0 0-1-1H6a3 3 0 0 1-3-3"/><path d="M16 14h5"/><circle cx="15" cy="14" r=".8" fill="currentColor" stroke="none"/>',
  message: '<path d="M21 11.5a9 9 0 0 1-9 8.5 10 10 0 0 1-4-.8L3 21l1.4-4.7A8 8 0 0 1 3 11.5a9 9 0 0 1 18 0Z"/><path d="M8 11h8M8 14h5"/>',
@@ -58,7 +60,7 @@ Object.entries(projects).filter(([,project])=>project.tags?.includes('top')).for
  const button=document.createElement('button');button.className='app';button.dataset.project=key;button.setAttribute('aria-label',project.name);
  const icon=document.createElement('span');icon.className='app-icon real-icon';
  const image=document.createElement('img');image.src=project.image;image.alt='';icon.append(image);
- const label=document.createElement('span');label.className='app-label';label.textContent=project.name;
+ const label=document.createElement('span');label.className='app-label';label.textContent=project.featuredLabel||project.name;
  button.append(icon,label);featuredApps.append(button);
 });
 const appsPage=document.getElementById('appsPage'),aboutPage=document.getElementById('aboutPage'),sheet=document.getElementById('projectSheet'),sheetCard=document.getElementById('projectSheetCard'),sheetContent=document.getElementById('sheetProjectContent'),contactSheet=document.getElementById('contactSheet'),settingsSheet=document.getElementById('settingsSheet'),themeToggle=document.getElementById('themeToggle'),themeStatus=document.getElementById('themeStatus'),spotlight=document.getElementById('spotlight'),searchInput=document.getElementById('searchInput'),searchResults=document.getElementById('searchResults'),island=document.getElementById('island');
@@ -69,7 +71,7 @@ const ipadShots=['assets/screenshots/faithlock/ipad-01.jpg','assets/screenshots/
 const faithStoreURL=projects.faithlock.url;
 let activePage=null,activeSheet=null,activeStorePage=null,activeStoreSheet=null,storeReturnPage=null,projectReturnPage=null,sourceReturnPage=null,activeProjectKey=null,activeSourceId=null,activeShot=0,activeViewerShots=iphoneShots,toastTimer=0;
 
-function closePages(){window.ResourceLibrary?.closeReader();document.querySelectorAll('.ios-page.active').forEach(p=>{window.NativeUI?.exit(p);p.classList.remove('active')});activePage=null}
+function closePages(){stopCutizVideo();window.ResourceLibrary?.closeReader();document.querySelectorAll('.ios-page.active').forEach(p=>{window.NativeUI?.exit(p);p.classList.remove('active')});activePage=null}
 function syncAppsIntro(){const intro=document.getElementById('appsIntro');intro.hidden=appsPage.dataset.activeGroup!=='open-source';intro.textContent=locale==='fr'?'Je crée et partage les outils que j’aurais aimé avoir sous la main.':'I build and share the tools I wish I’d had at hand.'}
 function openPage(name, group = 'all') {
  const page = document.getElementById(`${name}Page`);
@@ -83,6 +85,7 @@ function openPage(name, group = 'all') {
   page.scrollTop=0;
   activePage = page;
   window.NativeUI?.enter(page);
+  if(name==='lab')startCutizVideo();
  };
  showPage();
  if(name==='resources')window.ResourceLibrary?.load();
@@ -381,6 +384,83 @@ const presentationPhone=presentationIOS||presentationAndroid;
 presentationRoot.classList.toggle('platform-ios-phone',presentationIOS);
 presentationRoot.classList.toggle('platform-android-phone',presentationAndroid);
 presentationRoot.classList.toggle('platform-phone',presentationPhone);
+const cutizVideoFrame=document.getElementById('cutizVideoFrame');
+const cutizVideo=document.getElementById('cutizVideo');
+const cutizVideoPlay=document.getElementById('cutizVideoPlay');
+const cutizSoundToggle=document.getElementById('cutizSoundToggle');
+const cutizSoundLabel=document.getElementById('cutizSoundLabel');
+const cutizVideoPoster=cutizVideoFrame?.querySelector('.cutiz-video-poster');
+function syncCutizSoundControl(){
+ if(!cutizVideo||!cutizSoundToggle)return;
+ const enabled=!cutizVideo.muted;
+ cutizSoundToggle.setAttribute('aria-pressed',String(enabled));
+ cutizSoundToggle.setAttribute('aria-label',locale==='fr'?(enabled?'Couper le son':'Activer le son'):(enabled?'Mute video':'Turn sound on'));
+ cutizSoundLabel.textContent=locale==='fr'?(enabled?'Couper le son':'Activer le son'):(enabled?'Mute':'Sound on');
+ const icon=cutizSoundToggle.querySelector('.cutiz-sound-icon');
+ if(icon)icon.innerHTML=uiIcon(enabled?'volume':'volume-off');
+}
+function stopCutizVideo(){
+ if(!cutizVideo)return;
+ cutizVideo.pause();
+ cutizVideo.muted=true;
+ try{cutizVideo.currentTime=0}catch{}
+ cutizVideo.hidden=true;
+ cutizVideoFrame?.classList.remove('is-playing');
+ if(cutizVideoPoster)cutizVideoPoster.hidden=false;
+ if(cutizVideoPlay)cutizVideoPlay.hidden=true;
+ if(cutizSoundToggle)cutizSoundToggle.hidden=true;
+}
+function startCutizVideo(){
+ const variants=projects.cutiz?.videos?.[locale];
+ const source=variants?.[presentationPhone?'mobile':'desktop'];
+ if(!source||!cutizVideo)return;
+ cutizVideo.pause();
+ cutizVideo.src=source;
+ cutizVideo.muted=true;
+ cutizVideo.playsInline=true;
+ cutizVideo.hidden=false;
+ try{cutizVideo.currentTime=0}catch{}
+ cutizVideoFrame?.classList.remove('is-playing');
+ if(cutizVideoPoster)cutizVideoPoster.hidden=false;
+ if(cutizVideoFrame)cutizVideoFrame.style.aspectRatio=presentationPhone?'9 / 16':'1 / 1';
+ if(cutizVideoPlay){cutizVideoPlay.hidden=true;cutizVideoPlay.setAttribute('aria-label',locale==='fr'?'Lire la vidéo':'Play video')}
+ if(cutizSoundToggle)cutizSoundToggle.hidden=true;
+ syncCutizSoundControl();
+ cutizVideo.load();
+ const playback=cutizVideo.play();
+ if(playback&&typeof playback.catch==='function')playback.catch(()=>{
+  cutizVideo.hidden=true;
+  if(cutizVideoPlay)cutizVideoPlay.hidden=false;
+  if(cutizSoundToggle)cutizSoundToggle.hidden=true;
+ });
+}
+cutizVideo?.addEventListener('loadedmetadata',()=>{
+ if(cutizVideo.videoWidth&&cutizVideo.videoHeight&&cutizVideoFrame)cutizVideoFrame.style.aspectRatio=`${cutizVideo.videoWidth} / ${cutizVideo.videoHeight}`;
+});
+cutizVideo?.addEventListener('playing',()=>{
+ cutizVideoFrame?.classList.add('is-playing');
+ if(cutizVideoPoster)cutizVideoPoster.hidden=true;
+ if(cutizVideoPlay)cutizVideoPlay.hidden=true;
+ if(cutizSoundToggle)cutizSoundToggle.hidden=false;
+ syncCutizSoundControl();
+});
+cutizVideo?.addEventListener('error',()=>{
+ cutizVideo.hidden=true;
+ if(cutizVideoPoster)cutizVideoPoster.hidden=false;
+ if(cutizVideoPlay)cutizVideoPlay.hidden=false;
+ if(cutizSoundToggle)cutizSoundToggle.hidden=true;
+});
+cutizVideoPlay?.addEventListener('click',()=>{
+ try{cutizVideo.currentTime=0}catch{}
+ cutizVideo.muted=true;
+ cutizVideo.hidden=false;
+ cutizVideo.play().catch(()=>{});
+});
+cutizSoundToggle?.addEventListener('click',()=>{
+ if(cutizVideo.muted){cutizVideo.currentTime=0;cutizVideo.muted=false;cutizVideo.volume=1;cutizVideo.play().catch(()=>{})}
+ else cutizVideo.muted=true;
+ syncCutizSoundControl();
+});
 let fitFrame=0;
 function fitDevice(){
   const viewport=window.visualViewport;
@@ -500,7 +580,7 @@ function setLanguage(language){
  if(!['fr','en'].includes(language))return;
  locale=language;copy=copyByLanguage[locale];languageSelect.value=locale;
  try{localStorage.setItem('abdoul-portfolio-language',locale)}catch{}
- localizeContact();syncThemeControls();renderAppSections(appsPage.dataset.activeGroup||'all');document.getElementById('appsPageTitle').textContent=appsPage.dataset.activeGroup==='my'?copy.my:appsPage.dataset.activeGroup==='client'?copy.client:appsPage.dataset.activeGroup==='open-source'?'Open source':copy.app;syncAppsIntro();renderSearch(searchInput.value);if(activeProjectKey&&activePage?.id==='projectPage')renderProject(activeProjectKey);if(activeSourceId&&activePage?.id==='sourcePage')renderSourceProject(activeSourceId);window.ResourceLibrary?.localize();translatePage();
+ localizeContact();syncThemeControls();renderAppSections(appsPage.dataset.activeGroup||'all');document.getElementById('appsPageTitle').textContent=appsPage.dataset.activeGroup==='my'?copy.my:appsPage.dataset.activeGroup==='client'?copy.client:appsPage.dataset.activeGroup==='open-source'?'Open source':copy.app;syncAppsIntro();renderSearch(searchInput.value);if(activeProjectKey&&activePage?.id==='projectPage')renderProject(activeProjectKey);if(activeSourceId&&activePage?.id==='sourcePage')renderSourceProject(activeSourceId);if(activePage?.id==='labPage')startCutizVideo();window.ResourceLibrary?.localize();translatePage();
 }
 languageSelect.addEventListener('change',()=>setLanguage(languageSelect.value));
 function tick(){const d=new Date();document.getElementById('clock').textContent=d.toLocaleTimeString([], {hour:'2-digit',minute:'2-digit',hour12:false})}
@@ -508,8 +588,8 @@ renderPortfolioComponents();hydrateProfiles();syncThemeControls();scheduleDevice
 if(navigator.maxTouchPoints>0&&matchMedia('(max-width:600px)').matches)setTimeout(()=>{
  const home=document.getElementById('homeView'),dock=home?.querySelector('.home-dock');
  if(!home||!dock||!home.getClientRects().length||getComputedStyle(home).visibility==='hidden')return;
- const viewport=window.visualViewport,visibleBottom=(viewport?.offsetTop||0)+(viewport?.height||innerHeight);
- if(dock.getBoundingClientRect().bottom>visibleBottom-12)home.scrollTo({top:home.scrollHeight,behavior:'smooth'});
+ const viewport=window.visualViewport,visibleTop=viewport?.offsetTop||0,visibleBottom=visibleTop+(viewport?.height||innerHeight),needed=dock.getBoundingClientRect().bottom-visibleBottom+12,card=home.querySelector('.now-widget'),cardScrollLimit=card?Math.max(0,card.getBoundingClientRect().top-visibleTop-12):needed;
+ if(needed>0)home.scrollBy({top:Math.min(needed,cardScrollLimit),behavior:'smooth'});
 },3000);
 addEventListener('resize',scheduleDeviceFit,{passive:true});
 addEventListener('orientationchange',scheduleDeviceFit,{passive:true});
