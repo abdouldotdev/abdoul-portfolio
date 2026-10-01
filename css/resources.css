@@ -5,7 +5,7 @@
 .screen .resource-categories { display:flex; gap:8px; overflow-x:auto; scrollbar-width:none; margin:16px 0 4px; padding:2px 1px 6px; background:none; border:0; box-shadow:none; backdrop-filter:none; -webkit-backdrop-filter:none; }
 .resource-categories::-webkit-scrollbar { display:none; }
 .resource-categories[hidden] { display:none; }
-.resource-categories button { flex:none; min-height:36px; padding:0 14px; border-radius:999px; border:1px solid rgba(255,255,255,.25); background:rgba(255,255,255,.14); color:inherit; font:600 13px/1 -apple-system,BlinkMacSystemFont,"SF Pro Text",sans-serif; backdrop-filter:blur(22px) saturate(160%); -webkit-backdrop-filter:blur(22px) saturate(160%); cursor:pointer; }
+.resource-categories button { flex:none; min-height:36px; padding:0 14px; border-radius:999px; border:1px solid rgba(255,255,255,.25); background:rgba(255,255,255,.14); color:inherit; font:600 13px/1 "Satoshi",sans-serif; backdrop-filter:blur(22px) saturate(160%); -webkit-backdrop-filter:blur(22px) saturate(160%); cursor:pointer; }
 html[data-theme] .screen .resource-categories button.glass-surface { box-shadow:inset 0 1px 0 rgba(255,255,255,.5),0 1px 3px rgba(0,0,0,.05); backdrop-filter:none; -webkit-backdrop-filter:none; }
 html.svg-glass[data-theme] .screen .resource-categories button.glass-surface { box-shadow:inset 0 1px 0 rgba(255,255,255,.5),0 1px 3px rgba(0,0,0,.05); backdrop-filter:none; -webkit-backdrop-filter:none; }
 .resource-categories button[aria-pressed="true"] { color:var(--ios-blue); background:rgba(255,255,255,.32); border-color:rgba(255,255,255,.5); }

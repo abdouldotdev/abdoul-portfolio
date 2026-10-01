@@ -1,4 +1,4 @@
-@font-face{font-family:"SF Pro";src:url("../assets/fonts/sf-pro.ttf") format("truetype-variations");font-style:normal;font-weight:1 1000;font-display:swap}
+@font-face{font-family:"Satoshi";src:url("../assets/fonts/satoshi-variable.woff2") format("woff2");font-style:normal;font-weight:300 900;font-display:swap}
 :root{
   --ink:#0b0c0f; --muted:#696b73; --paper:#f4f3ef; --paper-2:#ebeae5;
   --glass:rgba(255,255,255,.54); --glass-strong:rgba(255,255,255,.72);
@@ -8,7 +8,7 @@
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth;background:var(--paper)}
-body{margin:0;min-height:100vh;font-family:-apple-system,BlinkMacSystemFont,"SF Pro",sans-serif;font-optical-sizing:auto;color:var(--ink);background:
+body{margin:0;min-height:100vh;font-family:"Satoshi",sans-serif;font-optical-sizing:auto;color:var(--ink);background:
  radial-gradient(80% 55% at 8% 10%,rgba(255,187,128,.28),transparent 60%),
  radial-gradient(70% 60% at 92% 18%,rgba(120,167,255,.24),transparent 60%),
  linear-gradient(180deg,#f8f7f3 0%,#efeee9 100%);overflow-x:hidden}
@@ -91,7 +91,7 @@ h1{font-size:clamp(54px,7.1vw,104px);line-height:.91;letter-spacing:-.075em;marg
 }
 .app-icon.real-icon{background:#111}
 .app-icon.real-icon img,.app-icon>img{width:100%;height:100%;display:block;object-fit:cover}
-.store-page{position:absolute;z-index:70;inset:0;background:#000;color:var(--ios-label);transform:translateX(103%);transition:transform .48s var(--spring);overflow:hidden;font-family:-apple-system,BlinkMacSystemFont,"SF Pro","Helvetica Neue",sans-serif;font-optical-sizing:auto;letter-spacing:-.012em}
+.store-page{position:absolute;z-index:70;inset:0;background:#000;color:var(--ios-label);transform:translateX(103%);transition:transform .48s var(--spring);overflow:hidden;font-family:"Satoshi",sans-serif;font-optical-sizing:auto;letter-spacing:-.012em}
 .store-page.active{transform:translateX(0)}
 .store-scroll{position:absolute;inset:0 0 77px;overflow-y:auto;overflow-x:hidden;overscroll-behavior:contain;scrollbar-width:none;background:#000;scroll-behavior:smooth}
 .store-scroll::-webkit-scrollbar,.store-rail::-webkit-scrollbar,.developer-pages::-webkit-scrollbar{display:none}
@@ -191,7 +191,7 @@ html,body{width:100%;height:100%;min-height:100%;overflow:hidden;background:#f5f
   --phone-w:402px;--phone-h:874px;--radius:62px;--screen-radius:54px;
   --viewport-left:0px;--viewport-top:0px;--viewport-width:100vw;--viewport-height:100dvh;
 }
-body{position:fixed;inset:0;margin:0;padding:0;font-family:-apple-system,BlinkMacSystemFont,"SF Pro","Helvetica Neue",sans-serif;font-optical-sizing:auto;font-synthesis:none;text-rendering:optimizeLegibility}
+body{position:fixed;inset:0;margin:0;padding:0;font-family:"Satoshi",sans-serif;font-optical-sizing:auto;font-synthesis:none;text-rendering:optimizeLegibility}
 .device-stage{
   box-sizing:border-box;position:fixed;z-index:1;
   left:var(--viewport-left);top:var(--viewport-top);width:var(--viewport-width);height:var(--viewport-height);
@@ -210,8 +210,8 @@ body{position:fixed;inset:0;margin:0;padding:0;font-family:-apple-system,BlinkMa
 }
 .phone-wrap:hover{transform:translate(-50%,-50%) scale(var(--device-scale))}
 
-/* SF Pro hierarchy following the iOS text styles. The font carries its native tracking. */
-.screen,.screen button,.screen input,.screen a{font-family:-apple-system,BlinkMacSystemFont,"SF Pro","Helvetica Neue",sans-serif;font-optical-sizing:auto;font-synthesis:none}
+/* iOS text-size hierarchy rendered in Satoshi. */
+.screen,.screen button,.screen input,.screen a{font-family:"Satoshi",sans-serif;font-optical-sizing:auto;font-synthesis:none}
 .screen *{letter-spacing:normal!important}
 .screen strong,.screen b{font-weight:600}
 .statusbar{font-size:17px;font-weight:600;letter-spacing:normal}

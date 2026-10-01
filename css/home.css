@@ -21,8 +21,6 @@ button:focus-visible,a:focus-visible,input:focus-visible { outline:3px solid #0a
 .home > * { flex-shrink:0; }
 .intro-widget { position:relative; isolation:isolate; overflow:hidden; display:flex; flex-direction:column; text-align:left; color:inherit; border:1px solid var(--surface-border); border-radius:30px; padding:18px; background:var(--surface); box-shadow:inset 0 1px 0 rgba(255,255,255,.25),0 8px 24px rgba(0,0,0,.06); backdrop-filter:blur(28px) saturate(145%); -webkit-backdrop-filter:blur(28px) saturate(145%); cursor:pointer; view-transition-name:about-card; animation:intro-card-arrive .82s var(--spring) both; }
 .intro-widget::before { content:""; position:absolute; z-index:-1; inset:-2%; pointer-events:none; background:radial-gradient(105% 95% at var(--intro-x, 12%) var(--intro-y, 4%),rgba(255,183,143,.58),transparent 62%),radial-gradient(100% 95% at 90% 4%,rgba(121,177,255,.42),transparent 65%),linear-gradient(135deg,rgba(255,219,196,.34),rgba(152,192,255,.22)); background-size:100% 100%,125% 125%,100% 100%; background-position:var(--intro-x, 12%) var(--intro-y, 4%),0% 0%,center; animation:intro-gradient-drift 16s ease-in-out infinite alternate; }
-html[data-theme] .screen .intro-widget.glass-surface { background:transparent; border-color:transparent; box-shadow:none; backdrop-filter:none; -webkit-backdrop-filter:none; }
-html.svg-glass[data-theme] .screen .intro-widget.glass-surface { background:transparent; border-color:transparent; box-shadow:none; backdrop-filter:none; -webkit-backdrop-filter:none; }
 .intro-widget::before { display:none; }
 .intro-widget > * { position:relative; z-index:1; }
 .intro-top { display:flex; align-items:center; gap:10px; view-transition-name:about-intro-head; animation:intro-copy-arrive .55s .18s var(--spring) both; }
@@ -336,7 +334,7 @@ html[data-theme="dark"] .source-stack span { color:#d6d6df; background:color-mix
   box-shadow:inset 0 1px 0 rgba(255,255,255,.42),0 12px 30px rgba(0,0,0,.2);
   backdrop-filter:blur(36px) saturate(190%); -webkit-backdrop-filter:blur(36px) saturate(190%);
 }
-.portfolio-tab { position:relative; display:flex; align-items:center; justify-content:center; gap:8px; min-height:54px; border:1px solid transparent; border-radius:20px; background:transparent; color:inherit; font:600 13px/1 -apple-system,BlinkMacSystemFont,"SF Pro Text",sans-serif; cursor:pointer; transition:transform .28s var(--spring),background .28s var(--spring),box-shadow .28s var(--spring); }
+.portfolio-tab { position:relative; display:flex; align-items:center; justify-content:center; gap:8px; min-height:54px; border:1px solid transparent; border-radius:20px; background:transparent; color:inherit; font:600 13px/1 "Satoshi",sans-serif; cursor:pointer; transition:transform .28s var(--spring),background .28s var(--spring),box-shadow .28s var(--spring); }
 .portfolio-tab[aria-selected="true"] { color:#087af5; background:linear-gradient(145deg,rgba(255,255,255,.55),rgba(255,255,255,.22)); border-color:rgba(255,255,255,.28); box-shadow:inset 0 1px 0 rgba(255,255,255,.8),0 3px 10px rgba(0,0,0,.1); }
 .tab-symbol .ui-icon { width:19px; height:19px; stroke-width:2; }
 .portfolio-tab:active { transform:scale(.96); }
@@ -387,12 +385,13 @@ html[data-theme="light"] .contact-option,html[data-theme="light"] .about-process
 
 @media (max-width:600px) {
   html.platform-phone.phone-portrait .home { padding:64px 20px 18px; gap:20px; }
-  html.platform-phone.phone-portrait.phone-short .home { padding:58px 18px 16px; gap:18px; }
-  html.platform-phone.phone-portrait.phone-short .intro-widget { padding:15px; border-radius:26px; }
-  html.platform-phone.phone-portrait.phone-short .intro-title { font-size:clamp(22px,7vw,28px); margin:16px 0 0; }
+  html.platform-phone.phone-portrait .home-bottom { position:sticky; bottom:0; z-index:10; }
+  html.platform-phone.phone-portrait.phone-short .home { padding:58px 18px 16px; gap:14px; }
+  html.platform-phone.phone-portrait.phone-short .intro-widget { padding:14px; border-radius:26px; }
+  html.platform-phone.phone-portrait.phone-short .intro-title { font-size:clamp(22px,7vw,28px); margin:12px 0 0; }
   html.platform-phone.phone-portrait.phone-short .home .app-icon { width:55px; height:55px; }
   html.platform-phone.phone-portrait.phone-short .home .app { min-height:77px; }
-  html.platform-phone.phone-portrait.phone-short .home-featured { margin-top:12px; }
+  html.platform-phone.phone-portrait.phone-short .home-featured { margin-top:6px; }
   html.platform-phone.phone-portrait.phone-short .home-dock { padding:10px 14px; }
   html.platform-phone.phone-portrait.phone-very-short .home { gap:16px; }
   html.platform-phone.phone-portrait.phone-very-short .home-featured { margin-top:8px; }

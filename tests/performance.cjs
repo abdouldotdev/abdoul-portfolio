@@ -14,7 +14,8 @@ const path=require('node:path');
   });
   const cdp=await page.context().newCDPSession(page);await cdp.send('Performance.enable');
   await page.goto(pathToFileURL(path.resolve(__dirname,'../index.html')).href);
-  await page.waitForTimeout(2000);
+  await page.locator('#openingSplash').waitFor({state:'detached'});
+  await page.evaluate(()=>new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve))));
   const start=await page.evaluate(()=>perfCheck.walks);
   await page.waitForTimeout(700);
   assert.equal(await page.evaluate(()=>perfCheck.walks),start,'No repeated translation scans at rest');
@@ -23,7 +24,8 @@ const path=require('node:path');
   assert.equal(await page.locator('.home-dock .dock-icon.glass-surface').count(),0);
   await page.screenshot({path:'/tmp/optimized-home.png'});
   for(const query of ['faith','glowe','cutiz','']){
-   await page.evaluate(()=>openSpotlight());await page.locator('#searchInput').fill(query);await page.waitForTimeout(150);
+   await page.evaluate(()=>openSpotlight());await page.locator('#searchInput').fill(query);
+   await page.waitForFunction(()=>[...perfCheck.resized].every(el=>el.isConnected));
    assert.equal(await page.evaluate(()=>[...perfCheck.resized].filter(el=>!el.isConnected).length),0,'Detached search results must be unobserved');
   }
   await page.evaluate(()=>{closeSpotlight();openSettings()});await page.waitForTimeout(600);
@@ -32,7 +34,7 @@ const path=require('node:path');
   const off=await page.locator('#themeToggle').getAttribute('aria-checked');await page.locator('#themeToggle').click();assert.notEqual(await page.locator('#themeToggle').getAttribute('aria-checked'),off);
   const switchSize=await page.locator('#themeToggle').evaluate(el=>[el.offsetWidth,el.offsetHeight,el.querySelector('i').offsetWidth]);assert.deepEqual(switchSize,[51,44,27]);
   await page.screenshot({path:'/tmp/optimized-settings.png'});
-  assert.equal(await page.evaluate(()=>performance.getEntriesByType('resource').some(e=>e.name.endsWith('/sf-pro.ttf'))),false,'macOS uses its installed system font');
+  assert.equal(await page.evaluate(()=>document.fonts.check('600 16px Satoshi')&&getComputedStyle(document.querySelector('.screen')).fontFamily.startsWith('Satoshi')),true,'Satoshi is active in the portfolio');
   assert.deepEqual(errors,[]);
   const metrics=(await cdp.send('Performance.getMetrics')).metrics.filter(m=>['ScriptDuration','LayoutCount','RecalcStyleCount','TaskDuration'].includes(m.name));
   console.log(JSON.stringify({checks:'idle stability, idempotent mount, resize cleanup, font loading, dock, switch and dropdown spacing OK',metrics}));

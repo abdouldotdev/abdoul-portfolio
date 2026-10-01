@@ -26,7 +26,7 @@ portfolio/
 └── assets/
     ├── logos/                    # Logos officiels des applications
     ├── images/                   # Photo de profil
-    ├── fonts/                    # Police SF Pro
+    ├── fonts/                    # Police Satoshi
     └── screenshots/faithlock/    # Captures iPhone et iPad
 ```
 
@@ -120,7 +120,7 @@ Références Apple : [Toolbars](https://developer.apple.com/design/human-interfa
 
 Les montages de composants sont idempotents. La traduction observe uniquement les sous-arbres modifiés de l’écran, sans réobserver ses propres écritures. Le verre sépare lectures de dimensions et écritures, réutilise ses filtres, échantillonne les cartes optiques sur 256 px maximum et construit au plus un nouveau filtre par frame. Le flou CSS reste visible pendant cette préparation. Les éléments retirés sont désinscrits du ResizeObserver.
 
-Les barres musicales utilisent `transform` au lieu de changer leur hauteur ; les animations décoratives sont suspendues hors écran et dans un onglet masqué. L’ombre du téléphone est une box-shadow, sans filtre portant sur tout son contenu. La police système Apple est prioritaire sur le fichier SF Pro de secours ; les grandes captures utilisent le chargement différé.
+Les barres musicales utilisent `transform` au lieu de changer leur hauteur ; les animations décoratives sont suspendues hors écran et dans un onglet masqué. L’ombre du téléphone est une box-shadow, sans filtre portant sur tout son contenu. La police Satoshi est hébergée avec le site ; les grandes captures utilisent le chargement différé.
 
 Mesure locale Chrome, parcours identique (accueil, Apps, recherche, contact, réglages), avant/après correction : temps JavaScript **3,63 s → 0,39 s**, recalculs de style **180 → 41**, layouts **94 → 26**. Ce sont des mesures de ce parcours sur cette machine, pas une garantie de fréquence d’images sur tous les appareils.
 

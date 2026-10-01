@@ -585,12 +585,6 @@ function setLanguage(language){
 languageSelect.addEventListener('change',()=>setLanguage(languageSelect.value));
 function tick(){const d=new Date();document.getElementById('clock').textContent=d.toLocaleTimeString([], {hour:'2-digit',minute:'2-digit',hour12:false})}
 renderPortfolioComponents();hydrateProfiles();syncThemeControls();scheduleDeviceFit();
-if(navigator.maxTouchPoints>0&&matchMedia('(max-width:600px)').matches)setTimeout(()=>{
- const home=document.getElementById('homeView'),dock=home?.querySelector('.home-dock');
- if(!home||!dock||!home.getClientRects().length||getComputedStyle(home).visibility==='hidden')return;
- const viewport=window.visualViewport,visibleTop=viewport?.offsetTop||0,visibleBottom=visibleTop+(viewport?.height||innerHeight),needed=dock.getBoundingClientRect().bottom-visibleBottom+12,card=home.querySelector('.now-widget'),cardScrollLimit=card?Math.max(0,card.getBoundingClientRect().top-visibleTop-12):needed;
- if(needed>0)home.scrollBy({top:Math.min(needed,cardScrollLimit),behavior:'smooth'});
-},3000);
 addEventListener('resize',scheduleDeviceFit,{passive:true});
 addEventListener('orientationchange',scheduleDeviceFit,{passive:true});
 addEventListener('pageshow',scheduleDeviceFit,{passive:true});
