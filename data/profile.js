@@ -7,10 +7,10 @@ const profileData = {
   linkedin: 'https://www.linkedin.com/in/abdouldev/'
  },
  socials: [
-  {key:'tiktok', label:'TikTok', url:''},
-  {key:'facebook', label:'Facebook', url:''},
+  {key:'tiktok', label:'TikTok', url:'https://www.tiktok.com/@abdoul.dev'},
+  {key:'facebook', label:'Facebook', url:'https://web.facebook.com/abdoul.rachid.tapsoba.419548/'},
   {key:'linkedin', label:'LinkedIn', url:'https://www.linkedin.com/in/abdouldev/'},
-  {key:'x', label:'X', url:''}
+  {key:'x', label:'X', url:'https://x.com/abdouldev'}
  ]
 };
 
