@@ -1,0 +1,81 @@
+{
+  "version": 1,
+  "id": "fastcash",
+  "name": "FastCash — Paris Sportifs",
+  "group": "client",
+  "featured": true,
+  "card": {
+    "category": "Finance · Mobile",
+    "tagline": "Dépôts et retraits, simplement.",
+    "description": "Une application mobile dédiée aux dépôts et aux retraits.",
+    "color": "#1B4C91",
+    "icon": "assets/logos/fastcash.jpg",
+    "tags": [
+      "top"
+    ],
+    "keywords": [
+      "Finance",
+      "Mobile",
+      "Dépôts & retraits"
+    ]
+  },
+  "listing": {
+    "platform": "Android",
+    "developer": "Appbiz Studio",
+    "category": {
+      "fr": "Finance",
+      "en": "Finance"
+    },
+    "subtitle": {
+      "fr": "Dépôts et retraits simplifiés",
+      "en": "Deposits and withdrawals made simple"
+    },
+    "description": {
+      "fr": "Alimente tes comptes bookmakers et retire tes gains avec une passerelle de paiement dédiée. FastCash rassemble tes opérations au même endroit, sans gérer plusieurs parcours de paiement.",
+      "en": "Deposit into bookmaker accounts and withdraw funds through a dedicated payment gateway. FastCash brings these transactions into one place."
+    },
+    "features": {
+      "fr": [
+        "Dépôts",
+        "Retraits",
+        "Paiement mobile"
+      ],
+      "en": [
+        "Deposits",
+        "Withdrawals",
+        "Mobile payments"
+      ]
+    },
+    "screenshots": [
+      "assets/screenshots/fastcash/01.webp",
+      "assets/screenshots/fastcash/02.webp",
+      "assets/screenshots/fastcash/03.webp",
+      "assets/screenshots/fastcash/04.webp",
+      "assets/screenshots/fastcash/05.webp"
+    ],
+    "cta": {
+      "fr": "Voir sur Google Play",
+      "en": "View on Google Play"
+    },
+    "url": "https://play.google.com/store/apps/details?id=com.soumbilmultiservice.fastbet.app",
+    "source": "Google Play"
+  },
+  "metrics": {
+    "users": {
+      "atLeast": 10000,
+      "source": "owner-provided"
+    },
+    "rating": {
+      "score": 4.1,
+      "reviewCount": 478,
+      "reviewCountIsMinimum": false,
+      "source": "owner-provided"
+    },
+    "releaseDate": "2026-02-26"
+  },
+  "links": {
+    "primary": "https://apps.apple.com/app/id6745784746",
+    "store": "https://play.google.com/store/apps/details?id=com.soumbilmultiservice.fastbet.app",
+    "website": null
+  }
+}

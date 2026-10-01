@@ -1,0 +1,76 @@
+{
+  "version": 1,
+  "id": "fluenzy",
+  "name": "Fluenzy",
+  "group": "my",
+  "featured": false,
+  "card": {
+    "category": "Education · AI",
+    "tagline": "Practice English by actually speaking it.",
+    "description": "Un coach conversationnel IA pour pratiquer naturellement, recevoir des corrections et progresser à l’oral.",
+    "color": "#6658E8",
+    "icon": "assets/logos/fluenzy.jpg",
+    "tags": [],
+    "keywords": [
+      "Voice AI",
+      "Education",
+      "iOS"
+    ]
+  },
+  "listing": {
+    "platform": "iOS",
+    "developer": "Appbiz Studio, LLC",
+    "category": {
+      "fr": "Éducation",
+      "en": "Education"
+    },
+    "subtitle": {
+      "fr": "Parle anglais avec un coach IA",
+      "en": "Speak English with an AI coach"
+    },
+    "description": {
+      "fr": "Pratique l’anglais à voix haute, sans clavier ni scénario figé. Fluenzy adapte la conversation à ton niveau et te donne des corrections immédiates sur la prononciation, la grammaire et le vocabulaire.",
+      "en": "Practice English out loud, without typing or scripted lessons. Fluenzy adapts to your level and gives immediate feedback on pronunciation, grammar and vocabulary."
+    },
+    "features": {
+      "fr": [
+        "Conversation vocale",
+        "Corrections en temps réel",
+        "Pratique à ton rythme"
+      ],
+      "en": [
+        "Voice conversation",
+        "Real-time feedback",
+        "Practice at your pace"
+      ]
+    },
+    "screenshots": [
+      "assets/screenshots/fluenzy/01.webp",
+      "assets/screenshots/fluenzy/02.webp",
+      "assets/screenshots/fluenzy/03.webp",
+      "assets/screenshots/fluenzy/04.webp",
+      "assets/screenshots/fluenzy/05.webp"
+    ],
+    "cta": {
+      "fr": "Voir sur l’App Store",
+      "en": "View on the App Store"
+    },
+    "url": "https://apps.apple.com/bf/app/fluenzy-ai-english-tutor/id6739749328",
+    "source": "App Store"
+  },
+  "metrics": {
+    "users": null,
+    "rating": {
+      "score": 5,
+      "reviewCount": 3,
+      "reviewCountIsMinimum": true,
+      "source": "App Store · US/FR"
+    },
+    "releaseDate": "2025-02-25"
+  },
+  "links": {
+    "primary": "https://apps.apple.com/bf/app/fluenzy-ai-english-tutor/id6739749328",
+    "store": "https://apps.apple.com/bf/app/fluenzy-ai-english-tutor/id6739749328",
+    "website": null
+  }
+}

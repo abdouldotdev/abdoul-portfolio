@@ -1,0 +1,66 @@
+/* Optical material shared by all UI surfaces. See js/liquid-glass.js and kube.io. */
+.screen { --glass-rgb:35,38,46; --glass-opacity:.46; --glass-edge:rgba(255,255,255,.24); --glass-shadow:rgba(0,0,0,.22); overflow:clip; }
+html[data-theme="light"] .screen { --glass-rgb:255,255,255; --glass-opacity:.36; --glass-edge:rgba(255,255,255,.7); --glass-shadow:rgba(24,35,55,.12); }
+.glass-filter-definitions { position:fixed; width:0; height:0; overflow:hidden; pointer-events:none; }
+html[data-theme] .screen .glass-surface {
+ background:linear-gradient(150deg,rgba(var(--glass-rgb),var(--glass-opacity)),rgba(var(--glass-rgb),calc(var(--glass-opacity)*.7)));
+ border:1px solid var(--glass-edge);
+ box-shadow:inset 0 1px 0 rgba(255,255,255,.35),inset 0 -1px 0 rgba(255,255,255,.08),0 7px 20px var(--glass-shadow);
+ -webkit-backdrop-filter:blur(18px) saturate(165%);
+ backdrop-filter:blur(18px) saturate(165%);
+}
+html.svg-glass[data-theme] .screen .glass-surface {
+ backdrop-filter:blur(var(--glass-blur,1px)) var(--glass-filter,blur(18px)) saturate(155%);
+ -webkit-backdrop-filter:blur(var(--glass-blur,1px)) var(--glass-filter,blur(18px)) saturate(155%);
+}
+.screen .sheet-card,.screen .store-sheet-card { --glass-opacity:.8; --glass-blur:10px; }
+.screen .ui-select-menu { --glass-opacity:.9; --glass-blur:12px; }
+.screen .native-header,.screen .portfolio-tabbar,.screen .store-tabs { --glass-opacity:.68; }
+.screen .contact-form textarea,.screen .contact-form select,.screen .language-select { --glass-opacity:.67; --glass-blur:5px; }
+.screen .portfolio-tab { --glass-opacity:0; box-shadow:none!important; border-color:transparent!important; }
+.screen .portfolio-tab[aria-selected="true"] { --glass-opacity:.6; border-color:var(--glass-edge)!important; }
+.screen .ui-navbar { border-radius:32px; --glass-opacity:.36; --glass-blur:4px; }
+.screen .ui-tabbar { display:grid; grid-template-columns:repeat(var(--nav-count),minmax(0,1fr)); gap:5px; padding:5px; }
+.screen .ui-nav-indicator { position:absolute; left:5px; top:5px; bottom:5px; width:calc((100% - 10px - (var(--nav-count) - 1)*5px)/var(--nav-count)); translate:calc(var(--nav-index)*(100% + 5px)) 0; border-radius:27px; pointer-events:none; --glass-opacity:.48; --glass-blur:1px; transition:translate .42s cubic-bezier(.22,1.15,.36,1); }
+html[data-theme] .screen .ui-tabbar > button.glass-surface { position:relative; z-index:1; width:auto; min-width:0; background:none; border-color:transparent!important; box-shadow:none!important; backdrop-filter:none; -webkit-backdrop-filter:none; }
+.screen .ui-tabbar > button:is([aria-selected="true"],.selected) { color:var(--ios-blue); }
+html[data-theme="dark"] .screen .ui-tabbar > button:is([aria-selected="true"],.selected) { color:#68b4ff; }
+.screen .icon-apps,.screen .dock-mail { --glass-rgb:5,85,195; --glass-opacity:.9; color:#fff; }
+.screen .dock-share { --glass-rgb:111,76,204; --glass-opacity:.9; color:#fff; }
+.screen .icon-work { --glass-rgb:100,62,175; --glass-opacity:.9; color:#fff; }
+.screen .icon-resources { --glass-rgb:155,88,0; --glass-opacity:.9; color:#fff; }
+.screen .icon-about { --glass-rgb:173,47,76; --glass-opacity:.9; color:#fff; }
+.screen .icon-lab,.screen .icon-settings,.screen .dock-settings,.screen .dock-search { --glass-rgb:59,67,81; --glass-opacity:.9; color:#fff; }
+.screen .open-pill,.screen .contact-continue,.screen .contact-linkedin,.screen .about-actions button:first-child { --glass-rgb:0,99,218; --glass-opacity:.94; color:#fff; }
+.screen .contact-option[aria-pressed="true"] { --glass-rgb:7,100,225; --glass-opacity:.25; }
+.screen .settings-toggle i { --glass-rgb:255,255,255; --glass-opacity:.96; --glass-blur:0px; border-radius:50%; }
+.screen .settings-toggle:active i { --glass-opacity:.6; scale:1.06 1.04; }
+.screen .glass-surface:is(button,a),.screen button .glass-surface { transition:scale .3s cubic-bezier(.2,1.25,.35,1),box-shadow .3s ease,border-color .2s ease; }
+.screen .glass-surface:is(button,a):active { scale:.965; }
+.screen .blue { color:#53a8ff; }.screen .green { color:#54d391; }.screen .orange { color:#ffb85c; }
+html[data-theme="light"] .screen .blue { color:#0064cc; }
+html[data-theme="light"] .screen .green { color:#187744; }
+html[data-theme="light"] .screen .orange { color:#9a5400; }
+.screen .real-icon { padding:0; }
+.screen .real-icon img { position:relative; z-index:1; }
+.screen .contact-sheet .sheet-card { overscroll-behavior:contain; }
+@media (prefers-reduced-transparency:reduce) {
+ html[data-theme] .screen .glass-surface { background:rgb(var(--glass-rgb)); backdrop-filter:none; -webkit-backdrop-filter:none; }
+}
+@media (prefers-reduced-motion:reduce) {
+ .screen .glass-surface,.screen button .glass-surface { transition:none!important; }
+}
+
+/* HIG: content uses standard material; glass elevation belongs to controls. */
+html[data-theme] .screen .ui-content-card {
+ background:rgba(var(--glass-rgb),.78); border:1px solid rgba(var(--glass-rgb),.5);
+ box-shadow:none; backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px);
+}
+html[data-theme] .screen :is(.get-pill,.native-back).glass-surface {
+ box-shadow:inset 0 1px 0 rgba(255,255,255,.4),0 2px 7px rgba(0,0,0,.07);
+}
+@media (prefers-reduced-transparency:reduce) {
+ html[data-theme] .screen .ui-content-card { background:rgb(var(--glass-rgb)); backdrop-filter:none; -webkit-backdrop-filter:none; }
+}
+
+html[data-theme] .screen .ui-switch i.glass-surface { box-shadow:0 1px 3px rgba(0,0,0,.2); border:0; }

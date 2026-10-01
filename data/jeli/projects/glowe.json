@@ -1,0 +1,76 @@
+{
+  "version": 1,
+  "id": "glowe",
+  "name": "Glowe",
+  "group": "my",
+  "featured": false,
+  "card": {
+    "category": "AI · Beauty",
+    "tagline": "Try a new look before making it real.",
+    "description": "Une expérience mobile de visualisation beauté assistée par IA, centrée sur les transformations de style et de couleur.",
+    "color": "#A94FE6",
+    "icon": "assets/logos/glowe.jpg",
+    "tags": [],
+    "keywords": [
+      "Generative AI",
+      "Beauty",
+      "iOS"
+    ]
+  },
+  "listing": {
+    "platform": "iOS",
+    "developer": "Appbiz Studio, LLC",
+    "category": {
+      "fr": "Références",
+      "en": "Reference"
+    },
+    "subtitle": {
+      "fr": "Essaie ton prochain look avant le salon",
+      "en": "Try your next look before the salon"
+    },
+    "description": {
+      "fr": "Importe un selfie, essaie des coupes, tresses et couleurs sur ton visage, puis garde tes favoris. Glowe t’aide à choisir ton prochain style avant de passer chez le coiffeur.",
+      "en": "Upload a selfie, try hairstyles, braids and colors on your own face, then save your favorites. Glowe helps you choose your next look before visiting the salon."
+    },
+    "features": {
+      "fr": [
+        "Coupes et tresses",
+        "Couleurs de cheveux",
+        "Favoris à partager"
+      ],
+      "en": [
+        "Hairstyles and braids",
+        "Hair colors",
+        "Shareable favorites"
+      ]
+    },
+    "screenshots": [
+      "assets/screenshots/glowe/01.webp",
+      "assets/screenshots/glowe/02.webp",
+      "assets/screenshots/glowe/03.webp",
+      "assets/screenshots/glowe/04.webp",
+      "assets/screenshots/glowe/05.webp"
+    ],
+    "cta": {
+      "fr": "Voir sur l’App Store",
+      "en": "View on the App Store"
+    },
+    "url": "https://apps.apple.com/bf/app/glowe-hair-color-changer/id6760845445",
+    "source": "App Store"
+  },
+  "metrics": {
+    "users": null,
+    "rating": {
+      "score": 5,
+      "reviewCount": 1,
+      "reviewCountIsMinimum": true,
+      "source": "App Store · BF"
+    },
+    "releaseDate": "2026-04-13"
+  },
+  "links": {
+    "primary": "https://apps.apple.com/bf/app/glowe-hair-color-changer/id6760845445",
+    "store": "https://apps.apple.com/bf/app/glowe-hair-color-changer/id6760845445",
+    "website": null
+  }
+}

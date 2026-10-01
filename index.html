@@ -1,0 +1,399 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, interactive-widget=resizes-content" />
+<meta name="color-scheme" content="light dark" />
+<title>Abdoul — I Build Useful Products</title>
+<script src="js/theme.js"></script>
+<link rel="stylesheet" href="css/styles.css" />
+<link rel="stylesheet" href="css/home.css" />
+<link rel="stylesheet" href="css/components.css" />
+<link rel="stylesheet" href="css/liquid-glass.css" />
+<link rel="stylesheet" href="css/native-ui.css" />
+<link rel="stylesheet" href="css/resources.css" />
+</head>
+<body>
+<section class="device-stage" aria-label="Portfolio interactif dans un iPhone">
+    <div class="device-shadow"></div>
+    <div class="phone-wrap" id="phoneWrap">
+      <i class="side-button action"></i><i class="side-button vol1"></i><i class="side-button vol2"></i><i class="side-button power"></i><i class="side-button camera"></i>
+      <div class="phone">
+        <div class="screen island-compact" id="screen">
+          <div class="wallpaper"></div>
+          <div class="statusbar"><span id="clock">9:41</span><span class="status-icons" aria-hidden="true"><svg class="cellular-icon" viewBox="0 0 18 12"><rect x="0" y="8" width="3" height="4" rx="1.25"/><rect x="5" y="5.5" width="3" height="6.5" rx="1.25"/><rect x="10" y="3" width="3" height="9" rx="1.25"/><rect x="15" y="0" width="3" height="12" rx="1.25"/></svg><svg class="wifi-icon" viewBox="0 0 18 14"><path d="M1.5 4.4C5.65.75 12.35.75 16.5 4.4"/><path d="M4.35 7.55a7.15 7.15 0 0 1 9.3 0"/><path d="M7.35 10.7a2.55 2.55 0 0 1 3.3 0"/><circle cx="9" cy="12.15" r=".8" fill="currentColor" stroke="none"/></svg><svg class="battery-icon" viewBox="0 0 28 13"><rect class="battery-case" x=".6" y=".6" width="23.4" height="11.8" rx="3.1"/><path class="battery-cap" d="M25.2 4.1h1.15c.75 0 1.05.62 1.05 1.3v2.2c0 .68-.3 1.3-1.05 1.3H25.2z"/><rect class="battery-level" x="2.4" y="2.4" width="17.2" height="8.2" rx="1.7"/></svg></span></div>
+          <button class="island" id="island" aria-label="Cutiz. Open the site to try it." aria-expanded="false">
+            <i class="island-lens" aria-hidden="true"></i>
+            <span class="island-idle" aria-hidden="false"><span class="compact-project"><img decoding="async" class="compact-mark" src="assets/logos/cutiz.png" alt=""><span class="compact-copy"><strong>Cutiz</strong><span class="compact-separator" aria-hidden="true">—</span><small>AI video editor</small></span></span><span class="compact-status" aria-label="Music playing"><i></i><i></i><i></i><i></i><i></i><i></i></span></span>
+            <span class="island-expanded-card" aria-hidden="true">
+              <span class="expanded-head"><img decoding="async" class="expanded-art" src="assets/logos/cutiz.png" alt=""><span class="expanded-copy"><strong>Cutiz</strong><small>AI video editor</small></span><span class="hot-pill">IN THE LAB</span></span>
+              <span class="island-teaser"><strong>You film. Cutiz prepares the edit.</strong><small>Cuts, captions, audio: tweak it, then post it.</small></span>
+              <span class="island-project-foot"><span class="project-progress"><span>Completion level</span><span>95%</span><span class="progress-track" role="progressbar" aria-label="Completion level" aria-valuemin="0" aria-valuemax="100" aria-valuenow="95"><i></i></span></span><span class="island-project-cta">Try it&nbsp;↗</span></span>
+            </span>
+          </button>
+
+          <main class="home" id="homeView">
+            <button class="intro-widget" data-page="about" aria-label="À propos d’Abdoul Rachid Tapsoba">
+              <span class="intro-top"><img decoding="async" class="intro-avatar" data-profile src="assets/images/abdoul.png" alt=""><span class="intro-identity"><strong>Salut, moi c’est Abdoul.</strong><span>Entrepreneur d’apps et créateur de produits</span></span></span>
+              <span class="intro-title"><span><span>Le sens du détail.</span></span><span><span>Des produits utiles.</span></span></span>
+              <span class="intro-description">100 000+ utilisateurs. Des millions de chiffre d’affaires générés pour mes clients.</span>
+              <span class="intro-foot"><span>More about me</span><span class="intro-arrow" data-icon="arrow" aria-hidden="true"></span></span>
+            </button>
+
+            <nav class="home-launchers" aria-label="Explore my portfolio">
+              <button class="app" data-page="apps" data-app-group="all"><span class="app-icon icon-apps" data-icon="apps"></span><span class="app-label">Apps</span></button>
+              <button class="app" data-page="apps" data-app-group="open-source"><span class="app-icon icon-work" data-icon="code"></span><span class="app-label">Open source</span></button>
+              <button class="app" data-page="resources"><span class="app-icon icon-resources" data-icon="resources"></span><span class="app-label">Resources</span></button>
+              <button class="app" data-page="about"><span class="app-icon icon-about" data-icon="about"></span><span class="app-label">About</span></button>
+            </nav>
+
+            <section class="home-featured" aria-labelledby="featuredTitle">
+              <div class="home-section-heading"><h2 id="featuredTitle">My top projects</h2><button data-page="apps" data-app-group="all" aria-label="See all apps"><span>See all</span></button></div>
+              <div class="featured-apps" id="featuredApps"></div>
+            </section>
+
+            <button class="now-widget" data-page="lab" aria-label="Open Lab — Cutiz">
+              <span class="now-art cutiz-art"><img decoding="async" src="assets/logos/cutiz.png" alt=""></span><span class="now-copy"><small>ON MY WORKBENCH</small><strong>Cutiz</strong><span>You film. Cutiz prepares the edit.</span></span><span class="now-arrow" data-icon="arrow"></span>
+            </button>
+            <div class="home-spacer"></div>
+            <div class="home-bottom">
+              <button class="home-search-pill" id="searchTrigger" type="button"><span data-icon="search" aria-hidden="true"></span><span>Search</span></button>
+              <nav class="home-dock" aria-label="Quick actions">
+                <button class="dock-action" data-contact><span class="dock-icon dock-mail" data-icon="mail"></span><span>Contact</span></button>
+                <button class="dock-action" data-share-portfolio><span class="dock-icon dock-share" data-icon="share"></span><span>Share</span></button>
+                <button class="dock-action" data-settings><span class="dock-icon dock-settings" data-icon="settings"></span><span>Settings</span></button>
+              </nav>
+            </div>
+          </main>
+
+          <section class="ios-page apps-page" id="appsPage" aria-label="Apps">
+            <div id="appsNativeHeader"></div>
+            <div class="apps-page-body">
+              <p class="apps-intro" id="appsIntro" hidden></p>
+              <div id="appPortfolioSections"></div>
+            </div>
+          </section>
+
+          <section class="ios-page about-page" id="aboutPage" aria-label="About Abdoul">
+            <div id="aboutNativeHeader"></div>
+            <div class="page-body">
+              <header class="about-intro"><div class="about-portrait"><img decoding="async" data-profile src="assets/images/abdoul.png" alt="Abdoul Rachid Tapsoba"><span class="portrait-badge" data-icon="check" aria-hidden="true"></span></div><h2>Abdoul Rachid<br>Tapsoba.</h2><p class="about-role">Entrepreneur d’apps. Créateur de produits.</p></header>
+              <div class="about-actions"><button data-contact><span data-icon="mail"></span>Let’s talk</button><button data-page="apps" data-app-group="my"><span data-icon="apps"></span>Projects</button></div>
+              <section class="about-story"><h3>Des apps qui servent vraiment.</h3><p>Je pars d’un besoin concret, puis je conçois et lance des produits mobiles simples à utiliser, soignés jusque dans les détails.</p><p>J’ai accompagné des clients dans plusieurs pays. Plus de 100 000 personnes ont utilisé nos apps, qui ont généré des millions pour leurs activités. Je partage aussi ce que j’apprends en chemin.</p></section>
+              <h3 class="section-label">What I build</h3>
+              <div class="about-focus list-card">
+                <div class="focus-row"><span class="focus-icon blue" data-icon="apps"></span><span><strong>Apps grand public</strong><small>Simples à adopter, pensées pour des besoins bien réels.</small></span></div>
+                <div class="focus-row"><span class="focus-icon green" data-icon="wallet"></span><span><strong>Fintech</strong><small>On construit la meilleure infrastructure de transfert d’argent pour les Africains.</small></span></div>
+                <div class="focus-row"><span class="focus-icon orange" data-icon="spark"></span><span><strong>IA &amp; open source</strong><small>Je crée des outils IA, partage le code et la valeur qu’ils génèrent.</small></span></div>
+              </div>
+              <section class="about-process"><h3 class="section-label">The way I work</h3><div><span><b>01</b>I create</span><span data-icon="chevron"></span><span><b>02</b>I launch</span><span data-icon="chevron"></span><span><b>03</b>I improve</span></div></section>
+              <nav id="aboutSocials" class="about-socials" aria-label="Mes réseaux sociaux"></nav>
+              <p class="about-signoff">Made with care. <span data-icon="heart" aria-hidden="true"></span></p>
+            </div>
+          </section>
+
+          <section class="ios-page resources-page" id="resourcesPage" aria-label="Resources">
+            <div id="resourcesNativeHeader"></div>
+            <div class="page-body"><header class="resources-intro"><p>Useful finds. Worth keeping.</p></header>
+              <p id="resourceStatus" class="resource-status" role="status"></p>
+              <nav id="resourceCategories" class="resource-categories" aria-label="Categories" hidden></nav>
+              <div id="resourceList" class="resource-list"></div>
+              <button id="resourceRetry" class="resource-action" hidden>Retry</button>
+            </div>
+          </section>
+
+          <section class="ios-page pdf-reader" id="readerPage" aria-label="Document reader">
+            <div id="readerNativeHeader"></div>
+            <div class="pdf-toolbar">
+              <span id="pdfProgress" role="status"></span>
+              <button id="pdfZoom" class="resource-action" aria-label="Zoom">100%</button>
+              <button id="pdfShare" class="resource-action">Share</button>
+              <a id="pdfDownload" class="resource-action" download>Download</a>
+            </div>
+            <div id="pdfScroll" class="page-body" tabindex="0" aria-label="Document pages">
+              <p id="pdfStatus" class="resource-status" role="status"></p><button id="pdfRetry" class="resource-action" hidden>Retry</button><div id="pdfPages"></div>
+            </div>
+          </section>
+
+          <section class="ios-page lab-page" id="labPage" aria-label="Cutiz">
+            <div id="labNativeHeader"></div>
+            <div class="page-body"><article class="lab-project cutiz-product-card">
+              <span class="lab-project-art"><img decoding="async" loading="lazy" src="assets/screenshots/cutiz-hero.webp" alt="" aria-hidden="true"></span>
+              <div class="cutiz-product-copy"><small>VERTICAL VIDEO EDITING</small><h2>Cutiz handles the tedious part.</h2><p>It cuts silences, syncs word-by-word captions and cleans the audio. You stay in control, then publish.</p>
+                <a class="lab-project-link" href="https://pim.ms/cutiz" target="_blank" rel="noreferrer">Try Cutiz for free <span data-icon="arrow"></span></a>
+              </div>
+            </article></div>
+          </section>
+
+          <section class="ios-page project-page" id="projectPage" aria-label="Project details">
+            <div id="projectNativeHeader"></div>
+            <div class="project-page-body">
+              <div class="project-store-product"><img decoding="async" id="projectPageIcon" alt=""><div><h2 id="projectPageTitle"></h2><p id="projectPageTagline"></p><a id="projectPageLink" class="project-open-pill" target="_blank" rel="noopener noreferrer">Open ↗</a></div></div>
+              <div id="projectPageFacts" class="project-store-facts"></div>
+              <section id="projectPagePreview" class="project-store-section" hidden><h3 id="projectPagePreviewLabel">Preview</h3><div id="projectPageShots" class="project-store-rail"></div></section>
+              <section class="project-store-section"><h3 id="projectPageAboutLabel">About this app</h3><p id="projectPageDescription"></p><ul id="projectPageFeatures" class="project-store-features"></ul></section>
+              <section class="project-store-section project-store-info"><h3 id="projectPageInfoLabel">Information</h3><div id="projectPageMeta"></div></section>
+            </div>
+          </section>
+
+          <section class="ios-page source-page" id="sourcePage" aria-label="Open source project details">
+            <div id="sourceNativeHeader"></div>
+            <div class="page-body source-page-body">
+              <article class="source-hero" id="sourceHero">
+                <div class="source-hero-top"><img class="source-mark" id="sourceMark" alt="" decoding="async"><span class="source-hero-type" id="sourceCategory"></span></div>
+                <p class="source-eyebrow">OPEN SOURCE <span aria-hidden="true">·</span> MIT</p>
+                <h2 id="sourceTitle"></h2>
+                <p class="source-subtitle" id="sourceSubtitle"></p>
+                <a class="source-github-link" id="sourceGithubLink" target="_blank" rel="noopener noreferrer"><span data-icon="code" aria-hidden="true"></span><span id="sourceGithubLabel">Voir le code sur GitHub</span><span aria-hidden="true">↗</span></a>
+              </article>
+              <section class="source-section"><h3 id="sourceAboutLabel">Le projet</h3><p id="sourceDescription"></p></section>
+              <section class="source-section"><h3 id="sourceHighlightsLabel">Ce que ça permet</h3><ol class="source-highlights" id="sourceHighlights"></ol></section>
+              <section class="source-section source-stack-section"><h3 id="sourceStackLabel">Technos & domaines</h3><div class="source-stack" id="sourceStack"></div></section>
+            </div>
+          </section>
+
+          <section class="store-page" id="faithStore" aria-hidden="true" aria-label="Faith Lock on the App Store">
+            <div class="store-scroll" id="faithStoreScroll">
+              <header class="store-compact" id="faithCompact">
+                <button class="glass-circle store-back" data-store-back aria-label="Back">
+                  <svg viewBox="0 0 24 24"><path d="M15 4 7 12l8 8"/></svg>
+                </button>
+                <span class="compact-icon"><img decoding="async" src="assets/logos/faithlock.jpg" alt=""></span>
+                <button class="open-pill compact-open" data-faith-open>Open</button>
+              </header>
+
+              <main class="store-content">
+                <nav class="store-top-actions" aria-label="App actions">
+                  <button class="glass-circle" data-store-back aria-label="Back">
+                    <svg viewBox="0 0 24 24"><path d="M15 4 7 12l8 8"/></svg>
+                  </button>
+                  <button class="glass-circle" data-share-open aria-label="Share Faith Lock">
+                    <svg viewBox="0 0 24 24"><path d="M12 15V3m0 0L8 7m4-4 4 4"/><path d="M6 10H5a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7a2 2 0 0 0-2-2h-1"/></svg>
+                  </button>
+                </nav>
+
+                <section class="store-product">
+                  <img decoding="async" class="store-artwork" src="assets/logos/faithlock.jpg" alt="Faith Lock app icon">
+                  <div class="store-product-copy">
+                    <h1>Faith Lock: Bible<br>Prayer Focus</h1>
+                    <div class="store-subtitle">Christian Screen Time Prayer</div>
+                    <button class="open-pill" data-faith-open>Open</button>
+                  </div>
+                </section>
+
+                <div class="store-rule"></div>
+                <section class="store-facts" aria-label="App information summary">
+                  <div class="store-fact"><span class="fact-label">Rating</span><strong class="fact-value">4.2 ★</strong></div>
+                  <div class="store-fact"><span class="fact-label">Release Date</span><time class="fact-value" datetime="2026-01-21">Jan 21</time><span class="fact-detail">2026</span></div>
+                  <div class="store-fact"><span class="fact-label">Category</span><strong class="fact-value small">Reference</strong></div>
+                </section>
+
+                <section class="store-section">
+                  <div class="store-section-heading"><h2>Preview</h2></div>
+                  <div class="store-rail" aria-label="Faith Lock screenshots">
+                    <button class="preview-card" data-shot="0" aria-label="Open screenshot 1"><img decoding="async" loading="lazy" src="assets/screenshots/faithlock/iphone-01.jpg" alt="Pray first. Scroll later"></button>
+                    <button class="preview-card" data-shot="1" aria-label="Open screenshot 2"><img decoding="async" loading="lazy" src="assets/screenshots/faithlock/iphone-02.jpg" alt="Pray daily. Grow your faith"></button>
+                    <button class="preview-card" data-shot="2" aria-label="Open screenshot 3"><img decoding="async" loading="lazy" src="assets/screenshots/faithlock/iphone-03.jpg" alt="Anxious? Bible answers"></button>
+                    <button class="preview-card" data-shot="3" aria-label="Open screenshot 4"><img decoding="async" loading="lazy" src="assets/screenshots/faithlock/iphone-04.jpg" alt="Less scrolling. Put God first"></button>
+                    <button class="preview-card" data-shot="4" aria-label="Open screenshot 5"><img decoding="async" loading="lazy" src="assets/screenshots/faithlock/iphone-05.jpg" alt="Prayers picked for your mood"></button>
+                    <button class="preview-card" data-shot="5" aria-label="Open screenshot 6"><img decoding="async" loading="lazy" src="assets/screenshots/faithlock/iphone-06.jpg" alt="Master verses quiz by quiz"></button>
+                    <button class="preview-card" data-shot="6" aria-label="Open screenshot 7"><img decoding="async" loading="lazy" src="assets/screenshots/faithlock/iphone-07.jpg" alt="Read Bible everywhere"></button>
+                    <button class="preview-card" data-shot="7" aria-label="Open screenshot 8"><img decoding="async" loading="lazy" src="assets/screenshots/faithlock/iphone-08.jpg" alt="Faithful widgets"></button>
+                  </div>
+                  <button class="platform-row" data-device-open>
+                    <svg viewBox="0 0 24 24"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M10 19h4"/></svg>
+                    <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M10 18h4"/></svg>
+                    <span>iPhone, iPad</span>
+                    <svg class="platform-chevron" viewBox="0 0 24 24"><path d="m8 10 4 4 4-4"/></svg>
+                  </button>
+                </section>
+
+                <section class="store-section">
+                  <div class="description-wrap" id="faithDescriptionWrap">
+                    <p class="store-description" id="faithDescription">Stop Scrolling. Start Scripture.
+
+FaithLock is a prayer lock app that blocks distracting apps and unlocks them with Bible verses — turning screen time into faith time.
+
+Build a daily prayer habit without willpower. Perfect for Christians who want prayer before phone time, and faith before the scroll.
+
+WHY FAITHLOCK?
+
+The average person checks their phone 96 times per day. What if every unlock was a moment of prayer with God?
+
+FaithLock transforms your biggest distraction into your most powerful spiritual discipline. No more guilt. No more “I’ll read later.” Just 30 seconds with Scripture before Instagram, TikTok, or any app you choose.
+
+HOW IT WORKS
+
+1. CHOOSE YOUR DISTRACTIONS — Lock social media, games, shopping, or any app stealing your focus.
+
+2. UNLOCK WITH PRAYER & SCRIPTURE — Read a daily Bible verse and pray before accessing your locked apps.
+
+3. BUILD YOUR PRAYER HABIT — Track your prayer streak and watch your faith grow day by day.
+
+FEATURES YOU’LL LOVE
+
+Daily Bible verses, prayer lock and app blocking, scheduled lock times, prayer streak tracking, faith insights and stats, prayer reminders, dark mode, and cloud sync for Premium members.
+
+Faith over phone. Prayer over scrolling. Every time.</p>
+                    <button class="description-more" id="faithDescriptionMore" aria-expanded="false">more</button>
+                  </div>
+                </section>
+
+                <section class="store-section">
+                  <button class="developer-link" data-developer-open>
+                    <span><strong>Appbiz Studio, LLC</strong><small>Developer</small></span>
+                    <svg class="ios-chevron" viewBox="0 0 12 20"><path d="m3 2 7 8-7 8"/></svg>
+                  </button>
+                </section>
+
+                <section class="store-section">
+                  <div class="store-section-heading"><h2>App Privacy</h2><button class="section-link" data-privacy-open>See Details</button></div>
+                  <div class="privacy-summary">
+                    <div class="privacy-chip"><svg viewBox="0 0 24 24"><path d="M12 21s8-3.5 8-10V5l-8-3-8 3v6c0 6.5 8 10 8 10Z"/><path d="m9 12 2 2 4-5"/></svg><strong>Data Used to Track You</strong></div>
+                    <div class="privacy-chip"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg><strong>Data Linked to You</strong></div>
+                    <div class="privacy-chip"><svg viewBox="0 0 24 24"><path d="M3 12s3.5-6 9-6 9 6 9 6-3.5 6-9 6-9-6-9-6Z"/><circle cx="12" cy="12" r="2"/><path d="m4 4 16 16"/></svg><strong>Data Not Linked to You</strong></div>
+                  </div>
+                  <p class="privacy-note">The developer indicated that this app’s privacy practices may include handling of purchases and usage data.</p>
+                </section>
+
+                <section class="store-section">
+                  <div class="store-section-heading"><h2>Accessibility</h2></div>
+                  <p class="privacy-note" style="margin-top:0">The developer has not yet indicated which accessibility features this app supports.</p>
+                </section>
+
+                <section class="store-section">
+                  <div class="store-section-heading"><h2>Information</h2></div>
+                  <dl class="store-info">
+                    <div class="info-row"><dt>Category</dt><dd>Reference</dd></div>
+                    <div class="info-row"><dt>Compatibility</dt><dd>Requires iOS 13.0 or later</dd></div>
+                    <div class="info-row"><dt>Languages</dt><dd>English</dd></div>
+                    <div class="info-row"><dt>Age Rating</dt><dd>4+</dd></div>
+                    <div class="info-row"><dt>In-App Purchases</dt><dd><button class="section-link" data-purchases-open>Yes ›</button></dd></div>
+                    <div class="info-row"><dt>Copyright</dt><dd>© Appbiz Studio LLC</dd></div>
+                    <div class="info-row"><dt>Version</dt><dd>1.0.5 · July 7, 2026</dd></div>
+                  </dl>
+                </section>
+              </main>
+            </div>
+          </section>
+
+          <section class="store-page developer-page" id="developerStore" aria-hidden="true" aria-label="Appbiz Studio developer page">
+            <div class="developer-scroll" id="developerScroll">
+              <div id="developerNativeHeader"></div>
+
+              <h2 class="developer-heading">Latest Release</h2>
+              <div class="release-row" id="latestRelease"></div>
+
+              <div class="developer-title-row"><h2 class="developer-heading">Apps</h2><svg viewBox="0 0 12 20"><path d="m3 2 7 8-7 8"/></svg></div>
+              <div class="developer-pages" id="developerPages"></div>
+              <div class="page-dots" id="developerDots"><i class="active"></i><i></i><i></i></div>
+            </div>
+          </section>
+
+          <nav class="store-tabs" id="storeTabs" aria-label="Portfolio sections">
+            <button class="store-tab" data-store-group="my"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="2"/><rect x="14" y="3" width="7" height="7" rx="2"/><rect x="3" y="14" width="7" height="7" rx="2"/><rect x="14" y="14" width="7" height="7" rx="2"/></svg><span>Projects</span></button>
+            <button class="store-tab" data-store-group="client"><svg viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="14" rx="3"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 12c5 4 13 4 18 0"/></svg><span>Client apps</span></button>
+            <button class="store-tab" data-store-group="open-source"><svg viewBox="0 0 24 24"><path d="m8 6-6 6 6 6m8-12 6 6-6 6M14 3l-4 18"/></svg><span>Open source</span></button>
+            <button class="store-tab" data-store-search><svg viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m15.5 15.5 5 5"/></svg><span>Search</span></button>
+          </nav>
+
+          <section class="screenshot-viewer" id="screenshotViewer" aria-hidden="true">
+            <button class="glass-circle viewer-close" data-viewer-close aria-label="Close screenshot"><svg viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></svg></button>
+            <div class="viewer-count" id="viewerCount">1 of 8</div>
+            <img decoding="async" id="viewerImage" loading="lazy" src="assets/screenshots/faithlock/iphone-01.jpg" alt="Faith Lock screenshot">
+          </section>
+
+          <section class="store-sheet-layer" id="shareSheet" aria-hidden="true">
+            <article class="store-sheet-card">
+              <div class="grabber"></div>
+              <div class="share-app-head"><img decoding="async" src="assets/logos/faithlock.jpg" alt=""><div><strong>Faith Lock</strong><small>apps.apple.com</small></div></div>
+              <div class="share-actions">
+                <button class="share-action" data-copy-link><span data-icon="copy"></span>Copy</button>
+                <button class="share-action" data-native-share><span data-icon="share"></span>Share</button>
+                <button class="share-action" data-faith-open><span data-icon="apps"></span>App Store</button>
+              </div>
+              <div class="sheet-list"><a href="mailto:?subject=Faith%20Lock&body=https://apps.apple.com/app/id6754208209">Send by Email <span>›</span></a><button data-sheet-close>Add to Reading List <span>›</span></button></div>
+            </article>
+          </section>
+
+          <section class="store-sheet-layer" id="deviceSheet" aria-hidden="true">
+            <article class="store-sheet-card">
+              <div class="grabber"></div>
+              <h2>App Previews</h2>
+              <div class="device-segment"><button class="active" data-preview-device="iphone">iPhone</button><button data-preview-device="ipad">iPad</button></div>
+              <div class="device-sheet-rail" id="deviceSheetRail">
+                <img decoding="async" loading="lazy" src="assets/screenshots/faithlock/iphone-01.jpg" alt=""><img decoding="async" loading="lazy" src="assets/screenshots/faithlock/iphone-02.jpg" alt=""><img decoding="async" loading="lazy" src="assets/screenshots/faithlock/iphone-03.jpg" alt=""><img decoding="async" loading="lazy" src="assets/screenshots/faithlock/iphone-04.jpg" alt=""><img decoding="async" loading="lazy" src="assets/screenshots/faithlock/iphone-05.jpg" alt=""><img decoding="async" loading="lazy" src="assets/screenshots/faithlock/iphone-06.jpg" alt=""><img decoding="async" loading="lazy" src="assets/screenshots/faithlock/iphone-07.jpg" alt=""><img decoding="async" loading="lazy" src="assets/screenshots/faithlock/iphone-08.jpg" alt="">
+              </div>
+            </article>
+          </section>
+
+          <section class="store-sheet-layer" id="purchasesSheet" aria-hidden="true">
+            <article class="store-sheet-card">
+              <div class="grabber"></div>
+              <h2>In-App Purchases</h2>
+              <div class="sheet-list"><button><span>Premium Membership</span><strong>$39.99</strong></button><button><span>Premium Membership</span><strong>$6.99</strong></button></div>
+            </article>
+          </section>
+
+          <section class="store-sheet-layer" id="privacySheet" aria-hidden="true">
+            <article class="store-sheet-card">
+              <div class="grabber"></div>
+              <h2>App Privacy</h2>
+              <p style="font-size:15px;line-height:1.42;color:#d1d1d6;margin:0">The developer indicated that usage data may be used to track you. Purchases and usage data may be linked to your identity, while some product interaction data may be collected without being linked to you.</p>
+              <div class="sheet-list"><a href="https://appbiz-studio.com/apps/faithlock/privacy" target="_blank" rel="noreferrer">Developer’s Privacy Policy <span>↗</span></a><button data-sheet-close>Done <span>›</span></button></div>
+            </article>
+          </section>
+
+          <div class="store-toast" id="storeToast">Link copied</div>
+
+          <section class="spotlight" id="spotlight" aria-label="Search portfolio"><div class="spotlight-inner"><div class="spotlight-search-row"><div class="spotlight-search"><span data-icon="search"></span><input id="searchInput" aria-label="Search portfolio" type="search" placeholder="Search…" autocomplete="off" enterkeyhint="search"></div><button class="glass-circle spotlight-close" id="closeSearch" type="button" aria-label="Close search"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5 19 19M19 5 5 19"/></svg></button></div><div class="search-results" id="searchResults" aria-live="polite"></div></div></section>
+
+          <section class="sheet-layer" id="projectSheet" aria-hidden="true"><article class="sheet-card" id="projectSheetCard"><div class="grabber"></div><div id="sheetProjectContent"></div></article></section>
+          <section class="sheet-layer contact-sheet" id="contactSheet" aria-hidden="true">
+            <article class="sheet-card" role="dialog" aria-modal="true" aria-labelledby="contactTitle" aria-describedby="contactIntro">
+              <div class="grabber"></div>
+              <div class="sheet-content">
+                <h2 id="contactTitle">Parlons-en.</h2>
+                <p id="contactIntro">Pour parler de votre projet, conseils, ou simplement échanger.</p>
+                <div class="contact-options" role="group" aria-label="Canal de contact">
+                  <button type="button" class="contact-option" data-contact-channel="email" aria-pressed="false"><b data-icon="mail"></b>Email</button>
+                  <button type="button" class="contact-option" data-contact-channel="whatsapp" aria-pressed="false"><b data-icon="whatsapp"></b>WhatsApp</button>
+                  <button type="button" class="contact-option" data-contact-channel="linkedin" aria-pressed="false"><b data-icon="linkedin"></b>LinkedIn</button>
+                </div>
+                <form id="contactForm" class="contact-form" hidden>
+                  <label for="contactReason" id="contactReasonLabel">De quoi souhaitez-vous parler ?</label>
+                  <select id="contactReason" name="reason" required></select>
+                  <div id="contactProjectField" hidden>
+                    <label for="contactBrief" id="contactBriefLabel">Votre projet en quelques mots</label>
+                    <textarea id="contactBrief" name="brief" rows="3" maxlength="800" placeholder="L’idée, les personnes concernées et ce que vous aimeriez créer…"></textarea>
+                  </div>
+                  <div id="contactDraftField" hidden>
+                    <label for="contactDraft" id="contactDraftLabel">Votre message · modifiable</label>
+                    <textarea id="contactDraft" name="message" rows="4" maxlength="2500" required></textarea>
+                  </div>
+                  <p id="contactHint" class="contact-hint" role="status" aria-live="polite"></p>
+                  <button type="submit" id="contactContinue" class="contact-continue" disabled>Continuer</button>
+                  <a id="contactLinkedIn" class="contact-linkedin" href="https://www.linkedin.com/in/abdouldev/" target="_blank" rel="noopener noreferrer" hidden>Ouvrir LinkedIn ↗</a>
+                </form>
+                <div class="sheet-actions"><button class="close-sheet" data-close-sheet>Fermer</button></div>
+              </div>
+            </article>
+          </section>
+          <section class="sheet-layer settings-sheet" id="settingsSheet" aria-hidden="true"><article class="sheet-card"><div class="grabber"></div><div class="sheet-content"><h2>Settings</h2><p class="settings-copy">Personalize the portfolio’s appearance on this device.</p><div class="settings-group"><div class="settings-row"><span class="settings-row-copy"><strong>Dark Mode</strong><small id="themeStatus">On</small></span><button class="settings-toggle" id="themeToggle" role="switch" aria-checked="true" aria-label="Dark Mode"><i></i></button></div><div class="settings-row"><label for="languageSelect" class="settings-row-copy"><strong>Language</strong></label><select id="languageSelect" class="language-select"><option value="fr">French</option><option value="en">English</option></select></div><div class="settings-row"><label for="textSizeSelect" class="settings-row-copy"><strong>Text size</strong></label><select id="textSizeSelect" class="language-select"><option value="1">Standard</option><option value="1.15">Large</option><option value="1.3">Extra large</option></select></div></div><div class="sheet-actions"><button class="close-sheet" data-close-sheet>Done</button></div></div></article></section>
+        </div>
+      </div>
+    </div>
+  </section>
+<script src="data/projects.js"></script>
+<script src="data/store-listings.js"></script>
+<script src="data/profile.js"></script>
+<script src="data/resources.js"></script>
+<script src="data/translations.js"></script>
+<script src="js/components.js"></script>
+<script src="js/app.js"></script>
+<script src="js/resources.js"></script>
+<script src="js/liquid-glass.js"></script>
+<script src="js/native-ui.js"></script>
+<script src="data/analytics.js"></script>
+<script src="js/analytics.js"></script>
+</body></html>

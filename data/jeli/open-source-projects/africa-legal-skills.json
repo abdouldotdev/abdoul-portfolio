@@ -1,0 +1,38 @@
+{
+  "id": "africa-legal-skills",
+  "name": "Africa Legal Skills",
+  "mark": "AL",
+  "color": "#9a6d3b",
+  "category": {
+    "fr": "Agent skills",
+    "en": "Agent skills"
+  },
+  "subtitle": {
+    "fr": "Skills juridiques sourcés pour le droit africain",
+    "en": "Sourced legal skills for African commercial law"
+  },
+  "description": {
+    "fr": "Des skills pour préparer une première version de contrats commerciaux en tenant compte du droit africain. Les faits intégrés sont reliés à des textes officiels archivés et vérifiés.",
+    "en": "Skills for drafting a first version of commercial contracts with African law in mind. Included facts are linked to archived, verified primary legal texts."
+  },
+  "highlights": {
+    "fr": [
+      "Sources juridiques archivées et datées",
+      "Couverture OHADA et paiements UEMOA/CEMAC",
+      "Limites de couverture explicites"
+    ],
+    "en": [
+      "Archived and dated legal sources",
+      "OHADA and UEMOA/CEMAC payments coverage",
+      "Explicit coverage limits"
+    ]
+  },
+  "stack": [
+    "Agent skills",
+    "OHADA",
+    "UEMOA · CEMAC"
+  ],
+  "license": "MIT",
+  "url": "https://github.com/abdouldotdev/africa-legal-skills",
+  "image": "assets/open-source/africa-legal-skills.webp"
+}

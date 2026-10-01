@@ -1,0 +1,271 @@
+{
+  "version": 1,
+  "projects": [
+    {
+      "id": "app-security-agent",
+      "name": "App Security Agent",
+      "mark": "AS",
+      "color": "#2563eb",
+      "image": "assets/open-source/app-security-agent.webp",
+      "category": {
+        "fr": "Skill · Sécurité",
+        "en": "Security skill"
+      },
+      "subtitle": {
+        "fr": "Audit Flutter guidé par OWASP MASVS",
+        "en": "Flutter audits guided by OWASP MASVS"
+      },
+      "description": {
+        "fr": "Un skill d’audit de sécurité pour les apps Flutter. Il passe en revue les 24 contrôles OWASP MASVS v2.1.0, classe les risques par gravité et propose des corrections concrètes, sur tout un projet ou seulement les fichiers modifiés.",
+        "en": "A security audit skill for Flutter apps. It reviews all 24 OWASP MASVS v2.1.0 controls, ranks findings by severity and suggests concrete fixes across a whole project or selected files."
+      },
+      "highlights": {
+        "fr": [
+          "24 contrôles dans 8 domaines de sécurité",
+          "Audit complet ou ciblé sur les fichiers modifiés",
+          "Rapport priorisé avec pistes de correction"
+        ],
+        "en": [
+          "24 controls across 8 security areas",
+          "Full audit or targeted checks of changed files",
+          "Prioritized findings with actionable fixes"
+        ]
+      },
+      "stack": [
+        "Flutter",
+        "OWASP MASVS",
+        "Agent skill"
+      ],
+      "license": "MIT",
+      "url": "https://github.com/abdouldotdev/app-security-agent"
+    },
+    {
+      "id": "appstore-connect-mcp",
+      "name": "App Store Connect MCP",
+      "mark": "AS",
+      "color": "#1d5fd4",
+      "category": {
+        "fr": "Outil développeur",
+        "en": "Developer tool"
+      },
+      "subtitle": {
+        "fr": "222 outils pour interagir avec App Store Connect",
+        "en": "222 tools to interact with App Store Connect"
+      },
+      "description": {
+        "fr": "Un serveur MCP qui permet à un assistant IA d’agir sur App Store Connect : préparer une fiche, gérer les captures, TestFlight, les prix ou les avis depuis une conversation.",
+        "en": "An MCP server that lets an AI assistant work with App Store Connect: prepare listings, manage screenshots, TestFlight, pricing and reviews from a conversation."
+      },
+      "highlights": {
+        "fr": [
+          "222 outils pour interagir avec App Store Connect",
+          "Fiches, captures et soumission réunies",
+          "TestFlight, prix et avis au même endroit"
+        ],
+        "en": [
+          "222 tools to interact with App Store Connect",
+          "Listings, screenshots and submission together",
+          "TestFlight, pricing and reviews in one place"
+        ]
+      },
+      "stack": [
+        "TypeScript",
+        "MCP",
+        "App Store Connect"
+      ],
+      "license": "MIT",
+      "url": "https://github.com/abdouldotdev/appstore-connect-mcp",
+      "image": "assets/open-source/appstore-connect-mcp.webp"
+    },
+    {
+      "id": "hush",
+      "name": "Hush",
+      "mark": "H",
+      "color": "#5a55b8",
+      "category": {
+        "fr": "App macOS",
+        "en": "macOS app"
+      },
+      "subtitle": {
+        "fr": "Correction de texte IA discrète sur macOS",
+        "en": "Invisible AI text correction for macOS"
+      },
+      "description": {
+        "fr": "Hush corrige ou reformule le texte dans le champ où tu écris, après une courte pause. L’app reste dans la barre de menus et envoie le texte directement à OpenRouter.",
+        "en": "Hush corrects or rewrites text in the field where you type after a short pause. It lives in the menu bar and sends text directly to OpenRouter."
+      },
+      "highlights": {
+        "fr": [
+          "Correction sans raccourci à mémoriser",
+          "Français et anglais détectés automatiquement",
+          "Texte original sauvegardé dans le presse-papiers"
+        ],
+        "en": [
+          "Correction without shortcuts to remember",
+          "Automatic French and English detection",
+          "Original text backed up to the clipboard"
+        ]
+      },
+      "stack": [
+        "Swift",
+        "macOS",
+        "OpenRouter"
+      ],
+      "license": "MIT",
+      "url": "https://github.com/abdouldotdev/Hush",
+      "image": "assets/open-source/hush.webp"
+    },
+    {
+      "id": "zed-device-manager",
+      "name": "Zed Device Manager",
+      "mark": "Z",
+      "color": "#c06936",
+      "category": {
+        "fr": "Extension Zed",
+        "en": "Zed extension"
+      },
+      "subtitle": {
+        "fr": "Appareils et simulateurs mobiles dans Zed",
+        "en": "Mobile devices and simulators in Zed"
+      },
+      "description": {
+        "fr": "Une extension pour piloter les appareils et simulateurs mobiles depuis Zed, sans quitter l’éditeur pendant le développement.",
+        "en": "An extension for managing mobile devices and simulators from Zed without leaving the editor while building."
+      },
+      "highlights": {
+        "fr": [
+          "Lister et démarrer les simulateurs iOS et Android",
+          "Lancer une app Flutter et déclencher le hot reload",
+          "Consulter les logs des appareils"
+        ],
+        "en": [
+          "List and launch iOS and Android simulators",
+          "Run a Flutter app and trigger hot reload",
+          "Read device logs"
+        ]
+      },
+      "stack": [
+        "Rust",
+        "Zed",
+        "Flutter"
+      ],
+      "license": "MIT",
+      "url": "https://github.com/abdouldotdev/zed-device-manager",
+      "image": "assets/open-source/zed-device-manager.webp"
+    },
+    {
+      "id": "flutter-adaptive-design-system",
+      "name": "Flutter Adaptive Design",
+      "mark": "F",
+      "color": "#2585be",
+      "category": {
+        "fr": "Design system",
+        "en": "Design system"
+      },
+      "subtitle": {
+        "fr": "41 widgets natifs adaptatifs iOS et Android",
+        "en": "41 native adaptive widgets for iOS and Android"
+      },
+      "description": {
+        "fr": "Un skill et des modèles Flutter pour créer une interface vraiment native sur chaque plateforme : Cupertino sur iOS, Material 3 sur Android, avec une seule API.",
+        "en": "A skill and Flutter templates for building truly native interfaces on each platform: Cupertino on iOS, Material 3 on Android, through one API."
+      },
+      "highlights": {
+        "fr": [
+          "41 widgets adaptatifs prêts à intégrer",
+          "Contrôles natifs sur chaque plateforme",
+          "Modèles copiés dans le projet, sans dépendance imposée"
+        ],
+        "en": [
+          "41 adaptive widgets ready to use",
+          "Native controls on each platform",
+          "Templates copied into your project, without a required package"
+        ]
+      },
+      "stack": [
+        "Flutter",
+        "Dart",
+        "Cupertino · Material 3"
+      ],
+      "license": "MIT",
+      "url": "https://github.com/abdouldotdev/flutter-adaptive-design-system",
+      "image": "assets/open-source/flutter-adaptive-design-system.webp"
+    },
+    {
+      "id": "mdman",
+      "name": "MdMan",
+      "mark": "M",
+      "color": "#53816d",
+      "category": {
+        "fr": "App macOS",
+        "en": "macOS app"
+      },
+      "subtitle": {
+        "fr": "Lecteur et éditeur Markdown pour macOS",
+        "en": "Markdown reader and editor for macOS"
+      },
+      "description": {
+        "fr": "Un lecteur et éditeur Markdown léger pour macOS. Ouvre un fichier, écris et passe entre l’édition, la vue partagée et l’aperçu sans perdre le fil.",
+        "en": "A lightweight Markdown reader and editor for macOS. Open a file, write, and switch between editing, split view and preview without losing focus."
+      },
+      "highlights": {
+        "fr": [
+          "Édition, vue partagée et aperçu",
+          "Glisser-déposer et ouverture depuis le terminal",
+          "Sauvegarde native et mode sombre"
+        ],
+        "en": [
+          "Edit, split and preview modes",
+          "Drag and drop and open from Terminal",
+          "Native saving and dark mode"
+        ]
+      },
+      "stack": [
+        "Swift",
+        "macOS",
+        "Markdown"
+      ],
+      "license": "MIT",
+      "url": "https://github.com/abdouldotdev/MdMan",
+      "image": "assets/open-source/mdman.webp"
+    },
+    {
+      "id": "africa-legal-skills",
+      "name": "Africa Legal Skills",
+      "mark": "AL",
+      "color": "#9a6d3b",
+      "category": {
+        "fr": "Agent skills",
+        "en": "Agent skills"
+      },
+      "subtitle": {
+        "fr": "Skills juridiques sourcés pour le droit africain",
+        "en": "Sourced legal skills for African commercial law"
+      },
+      "description": {
+        "fr": "Des skills pour préparer une première version de contrats commerciaux en tenant compte du droit africain. Les faits intégrés sont reliés à des textes officiels archivés et vérifiés.",
+        "en": "Skills for drafting a first version of commercial contracts with African law in mind. Included facts are linked to archived, verified primary legal texts."
+      },
+      "highlights": {
+        "fr": [
+          "Sources juridiques archivées et datées",
+          "Couverture OHADA et paiements UEMOA/CEMAC",
+          "Limites de couverture explicites"
+        ],
+        "en": [
+          "Archived and dated legal sources",
+          "OHADA and UEMOA/CEMAC payments coverage",
+          "Explicit coverage limits"
+        ]
+      },
+      "stack": [
+        "Agent skills",
+        "OHADA",
+        "UEMOA · CEMAC"
+      ],
+      "license": "MIT",
+      "url": "https://github.com/abdouldotdev/africa-legal-skills",
+      "image": "assets/open-source/africa-legal-skills.webp"
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "id": "hush",
+  "name": "Hush",
+  "mark": "H",
+  "color": "#5a55b8",
+  "category": {
+    "fr": "App macOS",
+    "en": "macOS app"
+  },
+  "subtitle": {
+    "fr": "Correction de texte IA discrète sur macOS",
+    "en": "Invisible AI text correction for macOS"
+  },
+  "description": {
+    "fr": "Hush corrige ou reformule le texte dans le champ où tu écris, après une courte pause. L’app reste dans la barre de menus et envoie le texte directement à OpenRouter.",
+    "en": "Hush corrects or rewrites text in the field where you type after a short pause. It lives in the menu bar and sends text directly to OpenRouter."
+  },
+  "highlights": {
+    "fr": [
+      "Correction sans raccourci à mémoriser",
+      "Français et anglais détectés automatiquement",
+      "Texte original sauvegardé dans le presse-papiers"
+    ],
+    "en": [
+      "Correction without shortcuts to remember",
+      "Automatic French and English detection",
+      "Original text backed up to the clipboard"
+    ]
+  },
+  "stack": [
+    "Swift",
+    "macOS",
+    "OpenRouter"
+  ],
+  "license": "MIT",
+  "url": "https://github.com/abdouldotdev/Hush",
+  "image": "assets/open-source/hush.webp"
+}

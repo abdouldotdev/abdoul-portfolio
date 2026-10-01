@@ -1,0 +1,74 @@
+{
+  "version": 1,
+  "id": "nanapay",
+  "name": "NanaPay",
+  "group": "my",
+  "featured": true,
+  "card": {
+    "category": "Fintech · Burkina Faso",
+    "tagline": "One place for everyday money movement.",
+    "description": "Une expérience financière mobile pensée pour simplifier les opérations entre réseaux et rendre les usages du quotidien beaucoup plus fluides.",
+    "color": "#15803D",
+    "icon": "assets/logos/nanapay.png",
+    "tags": [
+      "top"
+    ],
+    "keywords": [
+      "Fintech",
+      "Mobile",
+      "B2C + B2B"
+    ]
+  },
+  "listing": {
+    "platform": "Android",
+    "developer": "Appbiz Studio LLC",
+    "category": {
+      "fr": "Finance",
+      "en": "Finance"
+    },
+    "subtitle": {
+      "fr": "Transferts et paiements du quotidien",
+      "en": "Everyday transfers and payments"
+    },
+    "description": {
+      "fr": "Envoie de l’argent entre réseaux Mobile Money au Burkina Faso, règle tes factures et achète du crédit ou des forfaits internet depuis une seule application.",
+      "en": "Send money across Mobile Money networks in Burkina Faso, pay bills, and buy airtime or data from one app."
+    },
+    "features": {
+      "fr": [
+        "Transferts entre réseaux",
+        "Factures et recharges",
+        "Pensée pour le Burkina Faso"
+      ],
+      "en": [
+        "Cross-network transfers",
+        "Bills and top-ups",
+        "Built for Burkina Faso"
+      ]
+    },
+    "cta": {
+      "fr": "Découvrir",
+      "en": "Explore"
+    },
+    "url": "https://nanapay.app",
+    "source": "Google Play"
+  },
+  "metrics": {
+    "users": {
+      "atLeast": 3000,
+      "source": "owner-provided"
+    },
+    "rating": {
+      "score": 4.5,
+      "reviewCount": 74,
+      "reviewCountIsMinimum": false,
+      "source": "owner-provided"
+    },
+    "releaseDate": null
+  },
+  "links": {
+    "primary": "https://nanapay.app",
+    "store": null,
+    "website": "https://nanapay.app"
+  }
+}

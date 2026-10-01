@@ -1,0 +1,38 @@
+{
+  "id": "flutter-adaptive-design-system",
+  "name": "Flutter Adaptive Design",
+  "mark": "F",
+  "color": "#2585be",
+  "category": {
+    "fr": "Design system",
+    "en": "Design system"
+  },
+  "subtitle": {
+    "fr": "41 widgets natifs adaptatifs iOS et Android",
+    "en": "41 native adaptive widgets for iOS and Android"
+  },
+  "description": {
+    "fr": "Un skill et des modèles Flutter pour créer une interface vraiment native sur chaque plateforme : Cupertino sur iOS, Material 3 sur Android, avec une seule API.",
+    "en": "A skill and Flutter templates for building truly native interfaces on each platform: Cupertino on iOS, Material 3 on Android, through one API."
+  },
+  "highlights": {
+    "fr": [
+      "41 widgets adaptatifs prêts à intégrer",
+      "Contrôles natifs sur chaque plateforme",
+      "Modèles copiés dans le projet, sans dépendance imposée"
+    ],
+    "en": [
+      "41 adaptive widgets ready to use",
+      "Native controls on each platform",
+      "Templates copied into your project, without a required package"
+    ]
+  },
+  "stack": [
+    "Flutter",
+    "Dart",
+    "Cupertino · Material 3"
+  ],
+  "license": "MIT",
+  "url": "https://github.com/abdouldotdev/flutter-adaptive-design-system",
+  "image": "assets/open-source/flutter-adaptive-design-system.webp"
+}

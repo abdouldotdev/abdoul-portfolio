@@ -1,0 +1,38 @@
+{
+  "id": "zed-device-manager",
+  "name": "Zed Device Manager",
+  "mark": "Z",
+  "color": "#c06936",
+  "category": {
+    "fr": "Extension Zed",
+    "en": "Zed extension"
+  },
+  "subtitle": {
+    "fr": "Appareils et simulateurs mobiles dans Zed",
+    "en": "Mobile devices and simulators in Zed"
+  },
+  "description": {
+    "fr": "Une extension pour piloter les appareils et simulateurs mobiles depuis Zed, sans quitter l’éditeur pendant le développement.",
+    "en": "An extension for managing mobile devices and simulators from Zed without leaving the editor while building."
+  },
+  "highlights": {
+    "fr": [
+      "Lister et démarrer les simulateurs iOS et Android",
+      "Lancer une app Flutter et déclencher le hot reload",
+      "Consulter les logs des appareils"
+    ],
+    "en": [
+      "List and launch iOS and Android simulators",
+      "Run a Flutter app and trigger hot reload",
+      "Read device logs"
+    ]
+  },
+  "stack": [
+    "Rust",
+    "Zed",
+    "Flutter"
+  ],
+  "license": "MIT",
+  "url": "https://github.com/abdouldotdev/zed-device-manager",
+  "image": "assets/open-source/zed-device-manager.webp"
+}

@@ -1,0 +1,97 @@
+{
+  "version": 1,
+  "apps": [
+    {
+      "key": "fastcash",
+      "name": "FastCash — Paris Sportifs",
+      "subtitle": "Finance",
+      "icon": "assets/logos/fastcash.jpg",
+      "appId": "6745784746",
+      "group": "client",
+      "action": "Get",
+      "storeUrl": "https://apps.apple.com/app/id6745784746"
+    },
+    {
+      "key": "yorochange",
+      "name": "Yorochange",
+      "subtitle": "Mobile money et crypto",
+      "icon": "assets/logos/yorochange.png",
+      "url": "https://yorochange-prod.web.app/",
+      "group": "client",
+      "action": "Visit",
+      "storeUrl": null
+    },
+    {
+      "key": "glowe",
+      "name": "Glowe: Hair Color Changer",
+      "subtitle": "Hairstyle Try on, Hair App",
+      "icon": "assets/logos/glowe.jpg",
+      "appId": "6760845445",
+      "group": "my",
+      "action": "Open",
+      "storeUrl": "https://apps.apple.com/app/id6760845445"
+    },
+    {
+      "key": "faithlock",
+      "name": "Faith Lock: Bible Prayer Focus",
+      "subtitle": "Christian Screen Time Prayer",
+      "icon": "assets/logos/faithlock.jpg",
+      "appId": "6754208209",
+      "group": "my",
+      "action": "Open",
+      "internal": true,
+      "storeUrl": "https://apps.apple.com/app/id6754208209"
+    },
+    {
+      "key": "tenbo",
+      "name": "Tenbo",
+      "subtitle": "Online tontine",
+      "localizedSubtitle": "Tontine en ligne",
+      "icon": "assets/logos/tenbo.jpg",
+      "appId": "6742750785",
+      "group": "client",
+      "action": "Get",
+      "storeUrl": "https://apps.apple.com/app/id6742750785"
+    },
+    {
+      "key": "fluenzy",
+      "name": "Fluenzy: AI English Tutor",
+      "subtitle": "Interview & Accent Train",
+      "icon": "assets/logos/fluenzy.jpg",
+      "appId": "6739749328",
+      "group": "my",
+      "action": "Open",
+      "storeUrl": "https://apps.apple.com/app/id6739749328"
+    },
+    {
+      "key": "linkpost",
+      "name": "LinkPost",
+      "subtitle": "Productivity",
+      "icon": "assets/logos/linkpost.jpg",
+      "appId": "6504302645",
+      "group": "my",
+      "action": "Open",
+      "storeUrl": "https://apps.apple.com/app/id6504302645"
+    },
+    {
+      "key": "cutiz",
+      "name": "Cutiz",
+      "subtitle": "AI video editor",
+      "icon": "assets/logos/cutiz.png",
+      "group": "my",
+      "action": "In development",
+      "internal": true,
+      "storeUrl": null
+    },
+    {
+      "key": "nanapay",
+      "name": "NanaPay",
+      "subtitle": "Mobile finance",
+      "icon": "assets/logos/nanapay.png",
+      "url": "https://nanapay.app",
+      "group": "my",
+      "action": "Visit",
+      "storeUrl": null
+    }
+  ]
+}

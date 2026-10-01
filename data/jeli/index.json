@@ -1,0 +1,67 @@
+{
+  "version": 1,
+  "updatedAt": "2026-10-01",
+  "assetPaths": "relative to the portfolio site root",
+  "projects": [
+    {
+      "id": "nanapay",
+      "file": "projects/nanapay.json"
+    },
+    {
+      "id": "faithlock",
+      "file": "projects/faithlock.json"
+    },
+    {
+      "id": "fastcash",
+      "file": "projects/fastcash.json"
+    },
+    {
+      "id": "yorochange",
+      "file": "projects/yorochange.json"
+    },
+    {
+      "id": "cutiz",
+      "file": "projects/cutiz.json"
+    },
+    {
+      "id": "fluenzy",
+      "file": "projects/fluenzy.json"
+    },
+    {
+      "id": "glowe",
+      "file": "projects/glowe.json"
+    }
+  ],
+  "catalog": "catalog.json",
+  "openSource": "open-source.json",
+  "openSourceProjects": [
+    {
+      "id": "app-security-agent",
+      "file": "open-source-projects/app-security-agent.json"
+    },
+    {
+      "id": "appstore-connect-mcp",
+      "file": "open-source-projects/appstore-connect-mcp.json"
+    },
+    {
+      "id": "hush",
+      "file": "open-source-projects/hush.json"
+    },
+    {
+      "id": "zed-device-manager",
+      "file": "open-source-projects/zed-device-manager.json"
+    },
+    {
+      "id": "flutter-adaptive-design-system",
+      "file": "open-source-projects/flutter-adaptive-design-system.json"
+    },
+    {
+      "id": "mdman",
+      "file": "open-source-projects/mdman.json"
+    },
+    {
+      "id": "africa-legal-skills",
+      "file": "open-source-projects/africa-legal-skills.json"
+    }
+  ]
+}

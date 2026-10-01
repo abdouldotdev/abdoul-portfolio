@@ -1,0 +1,38 @@
+{
+  "id": "app-security-agent",
+  "name": "App Security Agent",
+  "mark": "AS",
+  "color": "#2563eb",
+  "image": "assets/open-source/app-security-agent.webp",
+  "category": {
+    "fr": "Skill · Sécurité",
+    "en": "Security skill"
+  },
+  "subtitle": {
+    "fr": "Audit Flutter guidé par OWASP MASVS",
+    "en": "Flutter audits guided by OWASP MASVS"
+  },
+  "description": {
+    "fr": "Un skill d’audit de sécurité pour les apps Flutter. Il passe en revue les 24 contrôles OWASP MASVS v2.1.0, classe les risques par gravité et propose des corrections concrètes, sur tout un projet ou seulement les fichiers modifiés.",
+    "en": "A security audit skill for Flutter apps. It reviews all 24 OWASP MASVS v2.1.0 controls, ranks findings by severity and suggests concrete fixes across a whole project or selected files."
+  },
+  "highlights": {
+    "fr": [
+      "24 contrôles dans 8 domaines de sécurité",
+      "Audit complet ou ciblé sur les fichiers modifiés",
+      "Rapport priorisé avec pistes de correction"
+    ],
+    "en": [
+      "24 controls across 8 security areas",
+      "Full audit or targeted checks of changed files",
+      "Prioritized findings with actionable fixes"
+    ]
+  },
+  "stack": [
+    "Flutter",
+    "OWASP MASVS",
+    "Agent skill"
+  ],
+  "license": "MIT",
+  "url": "https://github.com/abdouldotdev/app-security-agent"
+}

@@ -1,0 +1,79 @@
+{
+  "version": 1,
+  "id": "yorochange",
+  "name": "Yorochange",
+  "group": "client",
+  "featured": true,
+  "card": {
+    "category": "Finance · Mobile",
+    "tagline": "Du mobile money aux cryptos.",
+    "description": "Une expérience d’échange entre mobile money et crypto-actifs, pensée pour le Burkina Faso.",
+    "color": "#009F83",
+    "icon": "assets/logos/yorochange.png",
+    "tags": [
+      "top"
+    ],
+    "keywords": [
+      "Fintech",
+      "Mobile money",
+      "Crypto"
+    ]
+  },
+  "listing": {
+    "platform": "Android",
+    "developer": "Appbiz Studio LLC",
+    "category": {
+      "fr": "Finance",
+      "en": "Finance"
+    },
+    "subtitle": {
+      "fr": "Crypto et Mobile Money, réunis",
+      "en": "Crypto and Mobile Money, connected"
+    },
+    "description": {
+      "fr": "Achète et vends des cryptos depuis le Burkina Faso avec le Mobile Money. Yorochange relie les actifs comme Bitcoin, Ethereum, USDT et Solana aux moyens de paiement locaux.",
+      "en": "Buy and sell crypto from Burkina Faso using Mobile Money. Yorochange connects Bitcoin, Ethereum, USDT and Solana with local payment methods."
+    },
+    "features": {
+      "fr": [
+        "Achat et vente de cryptos",
+        "Mobile Money local",
+        "BTC · ETH · USDT · SOL"
+      ],
+      "en": [
+        "Buy and sell crypto",
+        "Local Mobile Money",
+        "BTC · ETH · USDT · SOL"
+      ]
+    },
+    "screenshots": [
+      "assets/screenshots/yorochange/01.webp",
+      "assets/screenshots/yorochange/02.webp",
+      "assets/screenshots/yorochange/03.webp"
+    ],
+    "cta": {
+      "fr": "Voir sur Google Play",
+      "en": "View on Google Play"
+    },
+    "url": "https://play.google.com/store/apps/details?id=appbiz.studio.yorochange",
+    "source": "Google Play"
+  },
+  "metrics": {
+    "users": {
+      "atLeast": 35000,
+      "source": "owner-provided"
+    },
+    "rating": {
+      "score": 4.5,
+      "reviewCount": 100,
+      "reviewCountIsMinimum": true,
+      "source": "owner-provided"
+    },
+    "releaseDate": "2026-06-25"
+  },
+  "links": {
+    "primary": "https://yorochange-prod.web.app/",
+    "store": "https://play.google.com/store/apps/details?id=appbiz.studio.yorochange",
+    "website": null
+  }
+}

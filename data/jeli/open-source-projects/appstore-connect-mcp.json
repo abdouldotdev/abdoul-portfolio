@@ -1,0 +1,38 @@
+{
+  "id": "appstore-connect-mcp",
+  "name": "App Store Connect MCP",
+  "mark": "AS",
+  "color": "#1d5fd4",
+  "category": {
+    "fr": "Outil développeur",
+    "en": "Developer tool"
+  },
+  "subtitle": {
+    "fr": "222 outils pour interagir avec App Store Connect",
+    "en": "222 tools to interact with App Store Connect"
+  },
+  "description": {
+    "fr": "Un serveur MCP qui permet à un assistant IA d’agir sur App Store Connect : préparer une fiche, gérer les captures, TestFlight, les prix ou les avis depuis une conversation.",
+    "en": "An MCP server that lets an AI assistant work with App Store Connect: prepare listings, manage screenshots, TestFlight, pricing and reviews from a conversation."
+  },
+  "highlights": {
+    "fr": [
+      "222 outils pour interagir avec App Store Connect",
+      "Fiches, captures et soumission réunies",
+      "TestFlight, prix et avis au même endroit"
+    ],
+    "en": [
+      "222 tools to interact with App Store Connect",
+      "Listings, screenshots and submission together",
+      "TestFlight, pricing and reviews in one place"
+    ]
+  },
+  "stack": [
+    "TypeScript",
+    "MCP",
+    "App Store Connect"
+  ],
+  "license": "MIT",
+  "url": "https://github.com/abdouldotdev/appstore-connect-mcp",
+  "image": "assets/open-source/appstore-connect-mcp.webp"
+}

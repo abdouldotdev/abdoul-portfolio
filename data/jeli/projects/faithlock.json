@@ -1,0 +1,82 @@
+{
+  "version": 1,
+  "id": "faithlock",
+  "name": "FaithLock",
+  "group": "my",
+  "featured": true,
+  "card": {
+    "category": "Focus · iOS",
+    "tagline": "Faith before the scroll.",
+    "description": "Une app de focus qui transforme le réflexe d’ouvrir une app distrayante en un moment intentionnel de lecture et de prière.",
+    "color": "#D68A4E",
+    "icon": "assets/logos/faithlock.jpg",
+    "tags": [
+      "top"
+    ],
+    "keywords": [
+      "Screen Time",
+      "iOS",
+      "Habits"
+    ]
+  },
+  "listing": {
+    "platform": "iOS",
+    "developer": "Appbiz Studio, LLC",
+    "source": "App Store",
+    "category": {
+      "fr": "Références",
+      "en": "Reference"
+    },
+    "subtitle": {
+      "fr": "Prière chrétienne et concentration",
+      "en": "Christian Screen Time Prayer"
+    },
+    "description": {
+      "fr": "FaithLock transforme le réflexe d’ouvrir une app distrayante en un moment de lecture biblique et de prière.",
+      "en": "Faith Lock turns the impulse to open a distracting app into a moment of scripture and prayer."
+    },
+    "features": {
+      "fr": [
+        "Lecture biblique",
+        "Prière",
+        "Temps d’écran"
+      ],
+      "en": [
+        "Bible reading",
+        "Prayer",
+        "Screen Time"
+      ]
+    },
+    "screenshots": [
+      "assets/screenshots/faithlock/iphone-01.jpg",
+      "assets/screenshots/faithlock/iphone-02.jpg",
+      "assets/screenshots/faithlock/iphone-03.jpg",
+      "assets/screenshots/faithlock/iphone-04.jpg",
+      "assets/screenshots/faithlock/iphone-05.jpg",
+      "assets/screenshots/faithlock/iphone-06.jpg",
+      "assets/screenshots/faithlock/iphone-07.jpg",
+      "assets/screenshots/faithlock/iphone-08.jpg"
+    ],
+    "tabletScreenshots": [
+      "assets/screenshots/faithlock/ipad-01.jpg",
+      "assets/screenshots/faithlock/ipad-02.jpg",
+      "assets/screenshots/faithlock/ipad-03.jpg"
+    ],
+    "url": "https://apps.apple.com/bf/app/faith-lock-bible-prayer-focus/id6754208209"
+  },
+  "metrics": {
+    "users": null,
+    "rating": {
+      "score": 4.2,
+      "reviewCount": 17,
+      "reviewCountIsMinimum": true,
+      "source": "App Store · US"
+    },
+    "releaseDate": "2026-01-21"
+  },
+  "links": {
+    "primary": "https://apps.apple.com/bf/app/faith-lock-bible-prayer-focus/id6754208209",
+    "store": "https://apps.apple.com/bf/app/faith-lock-bible-prayer-focus/id6754208209",
+    "website": null
+  }
+}

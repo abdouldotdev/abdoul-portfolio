@@ -1,0 +1,38 @@
+{
+  "id": "mdman",
+  "name": "MdMan",
+  "mark": "M",
+  "color": "#53816d",
+  "category": {
+    "fr": "App macOS",
+    "en": "macOS app"
+  },
+  "subtitle": {
+    "fr": "Lecteur et éditeur Markdown pour macOS",
+    "en": "Markdown reader and editor for macOS"
+  },
+  "description": {
+    "fr": "Un lecteur et éditeur Markdown léger pour macOS. Ouvre un fichier, écris et passe entre l’édition, la vue partagée et l’aperçu sans perdre le fil.",
+    "en": "A lightweight Markdown reader and editor for macOS. Open a file, write, and switch between editing, split view and preview without losing focus."
+  },
+  "highlights": {
+    "fr": [
+      "Édition, vue partagée et aperçu",
+      "Glisser-déposer et ouverture depuis le terminal",
+      "Sauvegarde native et mode sombre"
+    ],
+    "en": [
+      "Edit, split and preview modes",
+      "Drag and drop and open from Terminal",
+      "Native saving and dark mode"
+    ]
+  },
+  "stack": [
+    "Swift",
+    "macOS",
+    "Markdown"
+  ],
+  "license": "MIT",
+  "url": "https://github.com/abdouldotdev/MdMan",
+  "image": "assets/open-source/mdman.webp"
+}

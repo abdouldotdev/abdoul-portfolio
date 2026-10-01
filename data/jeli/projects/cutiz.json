@@ -1,0 +1,63 @@
+{
+  "version": 1,
+  "id": "cutiz",
+  "name": "Cutiz",
+  "group": "my",
+  "featured": false,
+  "card": {
+    "category": "Creator tool · AI",
+    "tagline": "Turn raw talking-head footage into a tighter edit.",
+    "description": "An AI video editor that removes editing busywork, so creators can spend more time making.",
+    "color": "#111111",
+    "icon": "assets/logos/cutiz.png",
+    "tags": [],
+    "keywords": [
+      "AI video",
+      "iOS",
+      "Creators"
+    ]
+  },
+  "listing": {
+    "platform": "iOS",
+    "source": "Portfolio",
+    "category": {
+      "fr": "Outil créatif · IA",
+      "en": "Creator tool · AI"
+    },
+    "subtitle": {
+      "fr": "Éditeur vidéo IA",
+      "en": "AI video editor"
+    },
+    "description": {
+      "fr": "Tu filmes. Cutiz prépare le montage. Ajuste les coupes, sous-titres et l’audio, puis publie.",
+      "en": "You film. Cutiz prepares the edit. Tweak cuts, captions and audio, then post."
+    },
+    "features": {
+      "fr": [
+        "Coupes",
+        "Sous-titres",
+        "Audio"
+      ],
+      "en": [
+        "Cuts",
+        "Captions",
+        "Audio"
+      ]
+    },
+    "screenshots": [],
+    "hero": "assets/screenshots/cutiz-hero.webp",
+    "url": "https://cutiz.app",
+    "status": "in-development",
+    "completionPercent": 95
+  },
+  "metrics": {
+    "users": null,
+    "rating": null,
+    "releaseDate": null
+  },
+  "links": {
+    "primary": "https://cutiz.app",
+    "store": null,
+    "website": "https://cutiz.app"
+  }
+}
