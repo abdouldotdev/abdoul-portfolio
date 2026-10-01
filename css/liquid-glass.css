@@ -1,6 +1,8 @@
 /* Optical material shared by all UI surfaces. See js/liquid-glass.js and kube.io. */
 .screen { --glass-rgb:35,38,46; --glass-opacity:.46; --glass-edge:rgba(255,255,255,.24); --glass-shadow:rgba(0,0,0,.22); overflow:clip; }
 html[data-theme="light"] .screen { --glass-rgb:255,255,255; --glass-opacity:.36; --glass-edge:rgba(255,255,255,.7); --glass-shadow:rgba(24,35,55,.12); }
+html[data-theme="dark"] .screen .intro-widget.glass-surface { background:linear-gradient(145deg,rgba(74,60,52,.76),rgba(30,61,68,.79)); border-color:rgba(255,255,255,.34); }
+html[data-theme="light"] .screen .intro-widget.glass-surface { background:linear-gradient(145deg,rgba(255,255,255,.78),rgba(234,246,248,.7)); border-color:rgba(255,255,255,.86); }
 .glass-filter-definitions { position:fixed; width:0; height:0; overflow:hidden; pointer-events:none; }
 html[data-theme] .screen .glass-surface {
  background:linear-gradient(150deg,rgba(var(--glass-rgb),var(--glass-opacity)),rgba(var(--glass-rgb),calc(var(--glass-opacity)*.7)));

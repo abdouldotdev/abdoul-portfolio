@@ -90,19 +90,10 @@ button:focus-visible,a:focus-visible,input:focus-visible { outline:3px solid #0a
 .portfolio-segment button { flex:1; min-height:38px; border:0; border-radius:9px; background:none; color:inherit; font-size:13px; cursor:pointer; }
 .portfolio-segment button[aria-pressed="true"] { background:var(--card); box-shadow:0 2px 6px rgba(0,0,0,.12); font-weight:600; }
 .about-page .page-body { padding:24px 21px 36px; }
-.opening-splash { position:absolute; z-index:200; inset:0; overflow:hidden; display:flex; align-items:flex-end; padding:0 25px max(42px,calc(env(safe-area-inset-bottom) + 24px)); color:#fff; background:#090808; opacity:1; transform:scale(1); filter:blur(0); transition:opacity .72s ease,transform .88s cubic-bezier(.2,.75,.2,1),filter .72s ease; }
-.opening-splash > img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center 24%; animation:splash-image-settle 8s ease-out both; }
-.opening-splash::before { content:""; position:absolute; z-index:1; inset:0; background:linear-gradient(180deg,rgba(10,8,8,.08) 16%,rgba(10,8,8,.03) 40%,rgba(10,8,8,.83) 100%); }
-.opening-splash.is-exiting { opacity:0; transform:scale(1.035) translateY(-7px); filter:blur(8px); pointer-events:none; }
-.splash-copy { position:relative; z-index:2; width:100%; padding-bottom:12px; animation:splash-copy-in .75s .12s both; }
-.splash-kicker { display:block; color:rgba(255,255,255,.72); font-size:10px; font-weight:720; letter-spacing:.18em; }
-.splash-copy h1 { margin:12px 0 9px; font-size:clamp(28px,8vw,38px); line-height:1.04; letter-spacing:-.055em; font-weight:720; }
-.splash-copy p { margin:0; color:rgba(255,255,255,.78); font-size:14px; }
-.splash-progress { display:block; width:42px; height:2px; margin-top:25px; overflow:hidden; border-radius:9px; background:rgba(255,255,255,.28); }
-.splash-progress i { display:block; width:100%; height:100%; transform:scaleX(0); transform-origin:left; background:#fff; animation:splash-progress 1.45s .1s ease-out forwards; }
-@keyframes splash-image-settle { from { transform:scale(1.035); } to { transform:scale(1); } }
-@keyframes splash-copy-in { from { opacity:0; transform:translateY(10px); } to { opacity:1; transform:translateY(0); } }
-@keyframes splash-progress { to { transform:scaleX(1); } }
+.opening-splash { position:absolute; z-index:200; inset:0; display:grid; place-items:center; background:#000; opacity:1; transition:opacity .6s ease; }
+.opening-splash.is-exiting { opacity:0; pointer-events:none; }
+.splash-apple { display:block; width:clamp(54px,16vw,76px); height:auto; fill:#fff; animation:splash-boot .9s ease-out both; }
+@keyframes splash-boot { from { opacity:0; transform:scale(.94); } to { opacity:1; transform:scale(1); } }
 .about-intro { text-align:center; }
 .about-portrait { width:100px; height:100px; margin:0 auto 20px; position:relative; }
 .about-portrait img { width:100%; height:100%; object-fit:cover; border-radius:50%; box-shadow:0 5px 24px rgba(0,0,0,.12); view-transition-name:about-avatar; }
@@ -156,7 +147,7 @@ button:focus-visible,a:focus-visible,input:focus-visible { outline:3px solid #0a
 .cutiz-video-play .ui-icon { width:24px; height:24px; margin-left:2px; }
 .cutiz-sound-toggle { right:10px; bottom:10px; min-height:34px; gap:6px; padding:0 10px; border-radius:999px; font-size:11px; font-weight:650; }
 .cutiz-sound-toggle .ui-icon { width:15px; height:15px; }
-@media(prefers-reduced-motion:reduce){.opening-splash,.splash-copy,.opening-splash>img,.splash-progress i{animation:none;transition-duration:.01ms}.opening-splash>img{transform:none}.splash-copy{opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){.opening-splash,.splash-apple{animation:none;transition-duration:.01ms}}
 .cutiz-product-copy { padding:0 7px 7px; }
 .cutiz-product-copy > small { color:#df7630; font-size:9px; font-weight:750; letter-spacing:.1em; }
 .cutiz-product-copy h2 { margin:8px 0 0; font-size:25px; line-height:1.08; letter-spacing:-.045em; font-weight:720; }
@@ -211,10 +202,10 @@ button:focus-visible,a:focus-visible,input:focus-visible { outline:3px solid #0a
 .island-teaser { display:block; margin-top:16px; }
 .island-teaser strong { font-size:16px; }
 .island-project-foot { margin-top:9px; }
-.island.open { height:166px; }
-.island-expanded-card { padding-bottom:9px; }
+.island.open { height:184px; }
+.island-expanded-card { padding-bottom:18px; }
 .progress-track i { width:95%; background:linear-gradient(90deg,#ff7a00,#ffa04c); }
-.island .island-project-cta { cursor:pointer; }
+.island .island-project-cta { cursor:pointer; color:#211005; background:linear-gradient(145deg,#ffad65,#ff7a1a); box-shadow:inset 0 1px rgba(255,255,255,.4); }
 .cutiz-art { overflow:hidden; padding:0; background:#ff7a00; }
 .cutiz-art img { width:100%; height:100%; object-fit:cover; }
 .icon-cutiz.real-icon { background:#ff7a00; }
@@ -397,6 +388,14 @@ html[data-theme="light"] .contact-option,html[data-theme="light"] .about-process
   html.platform-phone.phone-portrait.phone-very-short .home-featured { margin-top:8px; }
   html.platform-phone.phone-portrait.phone-very-short .home-spacer { display:none; }
 }
+
+/* iOS can suspend entrance animations while the page is in the background. */
+html.platform-ios-phone .intro-widget,
+html.platform-ios-phone .intro-top,
+html.platform-ios-phone .intro-top .intro-avatar,
+html.platform-ios-phone .intro-title > span > span,
+html.platform-ios-phone .intro-description,
+html.platform-ios-phone .intro-foot { animation:none; }
 
 /* Contact composer. Keep the select native so iOS supplies its own picker. */
 .contact-sheet [hidden] { display:none!important; }

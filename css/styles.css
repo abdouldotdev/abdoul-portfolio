@@ -44,14 +44,9 @@ h1{font-size:clamp(54px,7.1vw,104px);line-height:.91;letter-spacing:-.075em;marg
  linear-gradient(118deg,#77797c 0%,#e7e8e7 13%,#a5a6a7 25%,#f5f5f2 43%,#a4a5a6 63%,#dedfdf 80%,#696b6e 100%);box-shadow:inset 0 0 0 1px rgba(255,255,255,.82),inset 0 0 0 2px rgba(40,41,44,.48),inset 0 0 12px rgba(255,255,255,.42),0 1px 2px rgba(255,255,255,.7);overflow:hidden}
 .phone:before{content:"";position:absolute;inset:4px;border-radius:58px;border:1px solid rgba(14,15,17,.78);box-shadow:0 0 0 1px rgba(255,255,255,.18),inset 0 0 0 1px rgba(0,0,0,.62);pointer-events:none;z-index:31}
 .phone:after{content:"";position:absolute;inset:1px;border-radius:61px;background:linear-gradient(122deg,rgba(255,255,255,.7),transparent 17%,transparent 72%,rgba(255,255,255,.23));box-shadow:inset 0 0 12px rgba(255,255,255,.32);pointer-events:none;z-index:32}
-.screen{position:relative;width:100%;height:100%;border-radius:var(--screen-radius);overflow:hidden;background:#050506;isolation:isolate;box-shadow:0 0 0 1px rgba(0,0,0,.96),inset 0 0 0 1px rgba(255,255,255,.055),inset 0 0 10px rgba(0,0,0,.78)}
+.screen{position:relative;width:100%;height:100%;border-radius:var(--screen-radius);overflow:hidden;background:radial-gradient(65% 55% at 22% 8%,rgba(255,171,109,.95),transparent 66%),radial-gradient(80% 75% at 100% 42%,rgba(39,93,115,.88),transparent 65%),radial-gradient(75% 65% at 22% 100%,rgba(44,81,65,.98),transparent 62%),linear-gradient(160deg,#7a5b48 0%,#254953 48%,#122625 100%);isolation:isolate;box-shadow:0 0 0 1px rgba(0,0,0,.96),inset 0 0 0 1px rgba(255,255,255,.055),inset 0 0 10px rgba(0,0,0,.78)}
 .screen:after{content:"";position:absolute;z-index:200;inset:0;border-radius:inherit;box-shadow:inset 0 0 0 1px rgba(255,255,255,.035),inset 0 0 12px rgba(0,0,0,.23);pointer-events:none}
-.wallpaper{position:absolute;inset:0;background:
- radial-gradient(65% 55% at 22% 8%,rgba(255,171,109,.95),transparent 66%),
- radial-gradient(80% 75% at 100% 42%,rgba(39,93,115,.88),transparent 65%),
- radial-gradient(75% 65% at 22% 100%,rgba(44,81,65,.98),transparent 62%),
- linear-gradient(160deg,#7a5b48 0%,#254953 48%,#122625 100%);transform:scale(1.05)}
-.wallpaper:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.06),rgba(0,0,0,.18));backdrop-filter:saturate(135%)}
+.wallpaper{position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,rgba(0,0,0,.06),rgba(0,0,0,.18))}
 .statusbar{position:absolute;z-index:25;top:0;left:0;right:0;height:54px;display:flex;align-items:flex-start;justify-content:space-between;padding:15px 25px 0;color:#fff;font-size:15px;font-weight:600;letter-spacing:-.018em;font-variant-numeric:tabular-nums;text-shadow:0 1px 4px rgba(0,0,0,.24);pointer-events:none;opacity:1;transition:opacity .16s ease}
 .screen.island-expanded .statusbar{opacity:0}
 .status-icons{display:flex;gap:7px;align-items:center;height:14px}.status-icons svg{display:block;overflow:visible;fill:none;stroke:currentColor;stroke-linecap:round;stroke-linejoin:round;transition:opacity .14s ease}.screen.island-compact .cellular-icon,.screen.island-compact .wifi-icon{display:none}.cellular-icon{width:18px;height:12px}.cellular-icon rect{fill:currentColor;stroke:none}.wifi-icon{width:17px;height:13px;stroke-width:2}.battery-icon{width:27px;height:13px}.battery-icon .battery-case{stroke-width:1.15;opacity:.72}.battery-icon .battery-cap{fill:currentColor;stroke:none;opacity:.72}.battery-icon .battery-level{fill:currentColor;stroke:none}.privacy-dot{width:4px;height:4px;border-radius:50%;background:#ff9f0a;box-shadow:0 0 5px rgba(255,159,10,.55)}
@@ -392,8 +387,8 @@ html.platform-phone.phone-portrait.phone-very-short .search-pill{bottom:8px;heig
 /* Full light appearance. Dark is the native base palette above. */
 html[data-theme="light"],html[data-theme="light"] body{background:#f5f5f7;color:#111}
 html[data-theme="light"].platform-ios-phone,html[data-theme="light"].platform-ios-phone body{background:#fff}
-html[data-theme="light"] .wallpaper{background:radial-gradient(85% 54% at 7% 5%,rgba(255,164,88,.62),transparent 66%),radial-gradient(90% 60% at 100% 16%,rgba(89,188,226,.42),transparent 68%),linear-gradient(155deg,#f6d7bd 0%,#c6e1e8 48%,#c7e2d4 100%)}
-html[data-theme="light"] .wallpaper:after{background:linear-gradient(180deg,rgba(255,255,255,.08),rgba(255,255,255,.22));backdrop-filter:saturate(120%)}
+html[data-theme="light"] .screen{background:radial-gradient(85% 54% at 7% 5%,rgba(255,164,88,.62),transparent 66%),radial-gradient(90% 60% at 100% 16%,rgba(89,188,226,.42),transparent 68%),linear-gradient(155deg,#f6d7bd 0%,#c6e1e8 48%,#c7e2d4 100%)}
+html[data-theme="light"] .wallpaper{background:linear-gradient(180deg,rgba(255,255,255,.08),rgba(255,255,255,.22))}
 html[data-theme="light"] .home,html[data-theme="light"] .statusbar{color:#121214}
 html[data-theme="light"] .app{color:#121214}
 html[data-theme="light"] .app-label{text-shadow:0 1px 5px rgba(255,255,255,.65)}
