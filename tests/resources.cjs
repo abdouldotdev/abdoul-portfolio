@@ -23,6 +23,7 @@ const server=http.createServer((req,res)=>{const file=path.join(root,new URL(req
   await page.evaluate(()=>{setLanguage('fr');openPage('resources')});
   await page.waitForSelector('.resource-card');
   assert.equal(await page.locator('.resource-download').textContent(),'Télécharger');
+  assert.match(await page.locator('.resource-download').getAttribute('href'),/\/assets\/resources\/guide-motion-design-publicitaire\.pdf$/);
   await page.locator('.resource-actions button').click();
   await page.waitForSelector('.pdf-page[data-rendered="true"]');
   assert.equal(await page.locator('.pdf-page').count(),5);

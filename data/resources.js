@@ -26,6 +26,9 @@ const resourceData = {
   "categoryTranslations": {
     "ia": {"en":"AI"}
   },
+  "preferred": {
+    "guide-motion-design-publicitaire": "assets/resources/guide-motion-design-publicitaire.pdf"
+  },
   "local": {
     "https://jeli.abdoul.dev/portfolio-resources/files/guide-motion-design-claude.pdf": "assets/resources/guide-motion-design-publicitaire.pdf"
   },

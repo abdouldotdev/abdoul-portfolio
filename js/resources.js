@@ -18,7 +18,7 @@ window.ResourceLibrary = (() => {
  function validate(data){
   if(data?.version!==1||!Array.isArray(data.resources))throw Error('Invalid resource collection');
   categories=Array.isArray(data.categories)?data.categories.filter(c=>c&&typeof c.id==='string'&&typeof c.name==='string'):[];
-  return data.resources.filter(r=>r&&typeof r.id==='string'&&typeof r.title==='string'&&r.title.trim()&&safeURL(r.link)).map(r=>({...r,link:safeURL(r.link),download:safeURL(r.download),cover:safeURL(r.cover),description:typeof r.description==='string'?r.description:'',categoryIds:Array.isArray(r.categoryIds)?r.categoryIds.filter(id=>typeof id==='string'):[],pages:Number.isSafeInteger(r.pages)&&r.pages>0?r.pages:null}));
+  return data.resources.filter(r=>r&&typeof r.id==='string'&&typeof r.title==='string'&&r.title.trim()&&safeURL(r.link)).map(r=>{const bundled=location.protocol==='file:'?'':resourceData.preferred?.[r.id];const local=typeof bundled==='string'?new URL(bundled,location.href).href:'';return {...r,link:local||safeURL(r.link),download:local||safeURL(r.download),cover:safeURL(r.cover),description:typeof r.description==='string'?r.description:'',categoryIds:Array.isArray(r.categoryIds)?r.categoryIds.filter(id=>typeof id==='string'):[],pages:Number.isSafeInteger(r.pages)&&r.pages>0?r.pages:null}});
  }
  function titleFor(r){return resourceData.translations[r.id]?.[locale]?.title||r.title}
  function shareURL(r){return new URL(`resources/${encodeURIComponent(r.id)}`,resourceData.shareBase).href}

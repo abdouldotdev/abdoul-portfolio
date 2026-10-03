@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>60 secondes qui vendent — La méthode motion Cutiz</title>
+<style>
+@font-face { font-family: "Satoshi"; src: url("../fonts/satoshi-variable.woff2"); font-weight: 300 900; }
+@page { size: A4; margin: 18mm 17mm 20mm; }
+@page :first { margin: 0; }
+:root { --ink: #111; --soft: #555; --faint: #8a8a8a; --line: #e6e6e6; --tint: #fff4ec; --accent: #f97316; --dark: #0a0a0a; }
+* { box-sizing: border-box; }
+html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+body { margin: 0; font: 400 10.2pt/1.5 "Satoshi", system-ui, sans-serif; color: var(--ink); background: #fff; }
+h1, h2, h3 { font-weight: 800; letter-spacing: -.02em; margin: 0; }
+h2 { font-size: 20pt; margin: 0 0 4mm; display: flex; align-items: baseline; gap: 3mm; }
+h2 .n { color: var(--accent); font-size: 26pt; font-weight: 900; }
+h3 { font-size: 11.5pt; margin: 5mm 0 2mm; }
+p { margin: 0 0 3mm; }
+.lead { font-size: 12pt; color: var(--ink); font-weight: 500; }
+ul { margin: 0 0 3mm; padding-left: 5mm; }
+li { margin: 0 0 1.4mm; }
+strong { font-weight: 700; }
+a { color: var(--accent); font-weight: 700; text-decoration: underline; text-underline-offset: 2px; }
+.accent { color: var(--accent); }
+section { page-break-before: always; }
+table { width: 100%; border-collapse: collapse; margin: 2mm 0 4mm; font-size: 9.6pt; }
+th { text-align: left; font-weight: 700; font-size: 8.5pt; letter-spacing: .06em; text-transform: uppercase; color: var(--faint); border-bottom: 1.5px solid var(--ink); padding: 2mm 2mm 1.5mm 0; }
+td { border-bottom: 1px solid var(--line); padding: 1.6mm 2mm 1.6mm 0; vertical-align: top; }
+td:first-child { white-space: nowrap; font-weight: 700; }
+.q { font-style: italic; color: var(--soft); }
+.box { background: var(--tint); border-left: 3px solid var(--accent); padding: 3.5mm 4mm; border-radius: 0 6px 6px 0; margin: 3mm 0 4mm; }
+.box p:last-child, .box ul:last-child { margin-bottom: 0; }
+.warn { background: #fbecec; border-left-color: #d64545; }
+.cutiz-note { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 5mm; margin-top: 4mm; padding: 2.5mm 3.5mm; background: var(--dark); color: #fff; border-radius: 8px; break-inside: avoid; }
+.cutiz-note strong { display: block; color: var(--accent); font-size: 9.5pt; }
+.cutiz-note p { margin: .3mm 0 0; color: #dfdfdf; font-size: 8.5pt; line-height: 1.25; }
+.cutiz-note a { display: inline-block; padding: 2mm 2.5mm; border: 1px solid var(--accent); border-radius: 5px; color: #fff; font-size: 8.5pt; text-decoration: none; white-space: nowrap; }
+
+/* Couverture */
+.cover { height: 296mm; width: 210mm; display: flex; flex-direction: column; justify-content: space-between; background: var(--dark); color: #fff; padding: 26mm 22mm 18mm; overflow: hidden; }
+.cover .tag { font-size: 9pt; letter-spacing: .18em; text-transform: uppercase; color: var(--accent); font-weight: 700; }
+.cover h1 { font-size: 46pt; line-height: .98; letter-spacing: -.045em; font-weight: 900; margin-top: 10mm; }
+.cover h1 span { color: var(--accent); }
+.cover .sub { font-size: 14pt; color: #bdbdbd; max-width: 130mm; margin-top: 8mm; line-height: 1.4; }
+.plans { display: grid; grid-template-columns: repeat(3, 1fr); gap: 5mm; }
+.plan { border-top: 2px solid var(--accent); padding-top: 3mm; }
+.plan b { display: block; font-size: 22pt; font-weight: 900; color: var(--accent); }
+.plan span { font-size: 11pt; font-weight: 700; }
+.plan small { display: block; color: #9a9a9a; font-size: 9pt; margin-top: 1mm; }
+.foot { display: flex; justify-content: space-between; color: #7a7a7a; font-size: 8.5pt; }
+
+/* Arc de 60 s */
+.arc { display: flex; height: 13mm; border-radius: 6px; overflow: hidden; margin: 3mm 0 1.5mm; }
+.arc div { display: flex; align-items: center; justify-content: center; font-size: 8pt; font-weight: 700; color: #fff; text-align: center; line-height: 1.1; padding: 0 1mm; }
+.arc .p1 { background: #3a3a3a; } .arc .p2 { background: #5a5a5a; } .arc .p3 { background: #7a7a7a; }
+.arc .s1 { background: #f97316; } .arc .s2 { background: #fb923c; } .arc .s3 { background: #111; }
+.ticks { display: flex; justify-content: space-between; font-size: 7.5pt; color: var(--faint); margin-bottom: 4mm; }
+
+/* Prompt */
+pre { white-space: pre-wrap; font: 400 8.1pt/1.45 "SF Mono", Menlo, monospace; background: #0f0f0f; color: #eaeaea; padding: 5mm; border-radius: 8px; margin: 0; }
+pre .h { color: var(--accent); font-weight: 700; }
+pre .v { color: #fbbf24; }
+</style>
+</head>
+<body>
+
+<div class="cover">
+  <div>
+    <div class="tag">Guide · Motion design publicitaire</div>
+    <h1>60 secondes<br>qui <span>vendent.</span></h1>
+    <p class="sub">La méthode utilisée pour le motion Cutiz : un style clean, un message qui touche une vraie douleur, une voix et des sons qui la portent.</p>
+  </div>
+  <div>
+    <div class="plans">
+      <div class="plan"><b>01</b><span>Le style de rendu</span><small>Montrer des références, en extraire les règles.</small></div>
+      <div class="plan"><b>02</b><span>Le copywriting</span><small>Un seul problème, dit avec les mots de la cible.</small></div>
+      <div class="plan"><b>03</b><span>Voix &amp; sons</span><small>ElevenLabs v4, prises vérifiées, mix où la voix gagne.</small></div>
+    </div>
+    <p style="margin-top:10mm;color:#9a9a9a;font-size:9.5pt">+ Bonus : le prompt complet à copier-coller.</p>
+  </div>
+  <div class="foot"><span>Cutiz · Méthode motion</span><span>Septembre 2026</span></div>
+</div>
+
+<section>
+  <p class="lead">On travaille dans cet ordre : fixer le style, écrire le message, puis poser la voix et les sons. Chaque étape se valide avant la suivante.</p>
+  <h3>À réunir avant de commencer</h3>
+  <ul>
+    <li><strong>2 ou 3 vidéos de référence</strong> que tu trouves « clean » (fichiers ou transcripts).</li>
+    <li><strong>La DA</strong> : couleurs, police, logo, captures de l'app, 1 ou 2 photos d'une personne qui ressemble à la cible.</li>
+    <li><strong>Une clé ElevenLabs</strong> avec accès au modèle v4 (voix avec émotions).</li>
+    <li><strong>La cible et UN problème précis</strong> qu'elle vit, en une phrase.</li>
+  </ul>
+
+  <h2 style="margin-top:9mm"><span class="n">01</span> Le style de rendu</h2>
+  <p class="lead">Le style ne se décrit pas, il se montre. Donne des vidéos de référence et demande d'en extraire les règles avant d'animer quoi que ce soit.</p>
+  <h3>Ce qu'on fournit</h3>
+  <ul>
+    <li>Les vidéos de référence (par exemple <a href="https://cutiz.app">la vidéo Cutiz</a>), avec la consigne « s'en inspirer, pas copier ».</li>
+    <li>La DA : fond, surface, couleur d'accent, une seule police, le logo, de vraies captures de l'app.</li>
+    <li>Les formats : <strong>1:1 (1080×1080) pour la hero du site</strong> et <strong>9:16 (1080×1920) pour les réseaux</strong>.</li>
+  </ul>
+  <h3>Les règles à extraire des références</h3>
+  <table>
+    <tr><th>Critère</th><th>Règle retenue pour Cutiz</th></tr>
+    <tr><td>Rythme</td><td>Un changement visuel toutes les 1 à 2 s, calé sur les mots de la voix.</td></tr>
+    <tr><td>Caméra</td><td>Chaque scène a son cadrage. Zooms et plans inclinés seulement en passage.</td></tr>
+    <tr><td>Texte à l'écran</td><td>Pas de sous-titres. Seulement les phrases clés, le mot fort en couleur d'accent.</td></tr>
+    <tr><td>Placement</td><td>Le texte ne passe jamais sur un visuel : zone image et zone texte séparées.</td></tr>
+    <tr><td>Animation</td><td>Rebond, scintillement, lettre par lettre, glitch. Sortie en fondu flou vers le haut.</td></tr>
+    <tr><td>Interface</td><td>De vraies maquettes de l'app, détaillées et animées. Jamais de dessins génériques.</td></tr>
+    <tr><td>Police</td><td>Une seule, partout (Satoshi).</td></tr>
+  </table>
+  <div class="box">
+    <p><strong>Qualité</strong> : rendre en 4K puis réduire (plus net), 30 images/s, H.264 haute qualité, son AAC 320k. Pour le site, un encodage léger à part : ≈ 8 Mo en 1080, ≈ 5 Mo en 720 pour le mobile.</p>
+    <p><strong>Contrôle</strong> : demander une planche d'images clés à chaque version et la regarder avant tout export complet.</p>
+  </div>
+</section>
+
+<section>
+  <h2><span class="n">02</span> Le copywriting</h2>
+  <p class="lead">Le message touche <strong>un seul</strong> problème, dans une scène que la cible a déjà vécue. Les fonctionnalités n'arrivent qu'après, comme la réponse à cette douleur.</p>
+  <h3>Les règles</h3>
+  <ul>
+    <li><strong>Un problème, pas une liste.</strong> Cutiz : « la vidéo filmée qu'on ne monte jamais ».</li>
+    <li><strong>Une scène concrète</strong> : une heure, un lieu, un chiffre. <span class="q">« 22 h 47. Trois semaines entre trente-six selfies. »</span></li>
+    <li><strong>Des chiffres défendables</strong>, avec leur hypothèse écrite quelque part (9 h/mois = 3 vidéos/semaine × 45 min).</li>
+    <li><strong>L'humour tape sur la douleur</strong>, se comprend en moins d'une seconde et parle à tout le monde (l'abonnement à la salle qu'on n'utilise pas).</li>
+    <li><strong>Une culpabilité légère</strong>, jamais méprisante : on se moque de la situation, pas de la personne.</li>
+    <li><strong>Tutoiement, phrases courtes</strong>, un mot fort par phrase.</li>
+  </ul>
+  <h3>La structure en 8 temps (≈ 64 s)</h3>
+  <div class="arc">
+    <div class="p1" style="flex:4">Accroche</div>
+    <div class="p2" style="flex:11">Douleur</div>
+    <div class="p3" style="flex:12">Aggravation</div>
+    <div class="p2" style="flex:6">Enjeu</div>
+    <div class="s1" style="flex:17">Solution</div>
+    <div class="s2" style="flex:5">Résultat</div>
+    <div class="s1" style="flex:3">CTA</div>
+    <div class="s3" style="flex:6">Chute</div>
+  </div>
+  <div class="ticks"><span>0 s</span><span>15 s</span><span>30 s</span><span>45 s</span><span>64 s</span></div>
+  <table>
+    <tr><th>Temps</th><th>Rôle</th><th>Exemple Cutiz</th></tr>
+    <tr><td>Accroche</td><td>La cible se reconnaît en 3 s.</td><td class="q">« Allez. Ce soir… je la monte, cette vidéo. » (soupir) « Demain. »</td></tr>
+    <tr><td>Douleur</td><td>La scène concrète, avec ses détails.</td><td class="q">« Ça, c'est toi. 22 h 47. Et ça, c'est ta vidéo. Trois semaines entre 36 selfies de toi. »</td></tr>
+    <tr><td>Aggravation</td><td>Les vraies raisons, chiffrées, + le trait d'humour.</td><td class="q">« 9 heures par mois. Ou 315 $ pour un monteur. Plus cher que ta salle de sport… où tu vas pas non plus. »</td></tr>
+    <tr><td>Enjeu</td><td>Ce que ça coûte vraiment.</td><td class="q">« Pendant que d'autres postent. Avec des idées moins bonnes que les tiennes. »</td></tr>
+    <tr><td>Solution</td><td>Ce que fait l'app, dans l'ordre, en mots simples.</td><td class="q">« Silences, euh, répétitions : coupés. Sous-titres : animés. Ta voix : nettoyée. »</td></tr>
+    <tr><td>Résultat</td><td>Le bénéfice, qui reprend le mot de l'accroche.</td><td class="q">« Plus de vidéos. Moins de… demain. »</td></tr>
+    <tr><td>CTA</td><td>Une seule action, sans condition.</td><td class="q">« Essaie Cutiz gratuitement. »</td></tr>
+    <tr><td>Chute</td><td>Le rire final qui fait partager.</td><td class="q">« On peut plus rien pour toi. Ni nous. Ni ta salle de sport. … Personne. »</td></tr>
+  </table>
+  <div class="box"><p><strong>Test avant de produire</strong> : lis le script à voix haute à quelqu'un de la cible. S'il ne sourit pas sur l'aggravation et la chute, on réécrit. On ne répare pas un script faible au montage.</p></div>
+</section>
+
+<section>
+  <h2><span class="n">03</span> Voix &amp; effets sonores</h2>
+  <p class="lead">La voix porte l'histoire, tout le reste la sert. Avec une clé ElevenLabs, on génère voix, musique et bruitages, puis on vérifie chaque étape à l'oreille <em>et</em> par transcription.</p>
+
+  <div class="box warn"><p><strong>La clé ElevenLabs</strong> se met dans une variable d'environnement (<code>ELEVEN_KEY</code>), jamais dans un fichier partagé ni un message. Si elle a circulé, régénère-la dans ton compte.</p></div>
+
+  <h3>La voix</h3>
+  <ul>
+    <li><strong>Modèle v4 avec balises d'émotion</strong> dans le texte : <span class="q">[sarcastic] [whispers] [sighs] [deadpan] [dramatically]</span>. Une émotion par intention, pas par phrase.</li>
+    <li><strong>Une voix de narrateur</strong> (FR : Paul K · EN : Desmond, voix « trailer »). Une seule voix pour tout le film.</li>
+    <li><strong>Le nom de marque écrit comme il se prononce</strong> : « Keuttize » en FR, « Cut-iz » en EN. Sinon la voix l'écorche.</li>
+    <li><strong>2 prises par ligne</strong> (une libre, une posée), chacune retranscrite automatiquement : une prise où il manque un mot est rejetée.</li>
+    <li><strong>Resserrer le rythme</strong> : couper seulement dans les silences réellement mesurés, jamais au milieu d'un mot. Accélérer un peu (× 1,1 à 1,2). Garder un vrai silence de 1,5 s avant la chute, c'est lui qui fait rire.</li>
+  </ul>
+
+  <h3>La musique</h3>
+  <ul>
+    <li><strong>Deux pistes</strong> : une tension sourde pour la douleur, une plus lumineuse qui démarre pile sur « c'est exactement ça que Cutiz change ».</li>
+    <li>La bascule entre les deux est <em>le</em> moment du film : coupure nette, pas de fondu mou.</li>
+  </ul>
+
+  <h3>Les bruitages</h3>
+  <ul>
+    <li><strong>Un son par animation de texte</strong> : pop sur un rebond, scintillement électrique, glitch, whoosh de sortie.</li>
+    <li><strong>Un gag sonore sur la chute</strong> (le trombone triste après « on peut plus rien pour toi »).</li>
+    <li>Moins, mais au bon endroit : un son qui ne sert pas un geste à l'écran est retiré.</li>
+  </ul>
+
+  <h3>Le mix</h3>
+  <table>
+    <tr><th>Règle</th><th>Pourquoi</th></tr>
+    <tr><td>La voix devant</td><td>Musique et bruitages baissent automatiquement quand la voix parle.</td></tr>
+    <tr><td>Zone calme</td><td>Sur les phrases clés (la solution), bruitages à moitié et voix remontée.</td></tr>
+    <tr><td>−14 LUFS</td><td>Le niveau attendu par les réseaux et le web : ni écrasé, ni trop faible.</td></tr>
+    <tr><td>Retranscrire le mix</td><td>Si un mot manque dans la transcription finale, un son le masque : on le déplace.</td></tr>
+  </table>
+  <aside class="cutiz-note">
+    <div><strong>Et pour monter tes propres vidéos ?</strong><p>Cutiz prépare les coupes, les sous-titres et l'audio. Tu vérifies, puis tu publies.</p></div>
+    <a href="https://cutiz.app">Découvrir Cutiz ↗</a>
+  </aside>
+</section>
+
+<section>
+  <h2><span class="n">+</span> Bonus : le prompt complet</h2>
+  <p class="lead">À copier-coller tel quel, en remplaçant ce qui est <span class="accent">entre crochets</span>. Joins les vidéos de référence et les fichiers de DA au même message.</p>
+<pre><span class="h"># MISSION</span>
+Tu gères de bout en bout un motion design publicitaire de <span class="v">[60]</span> secondes pour <span class="v">[marque]</span>,
+en <span class="v">[français]</span>, livré en 1:1 (1080×1080, hero du site) et 9:16 (1080×1920, réseaux).
+Tu es l'expert : quand je te pose une question, tu tranches, tu ne me renvoies pas la décision.
+
+<span class="h"># LA CIBLE ET SON PROBLÈME</span>
+Cible : <span class="v">[qui, en une phrase]</span>
+Le problème, un seul : <span class="v">[la situation précise qu'elle vit]</span>
+Une scène où elle le vit : <span class="v">[heure, lieu, objet, chiffre]</span>
+Ce que le produit fait contre ça, dans l'ordre : <span class="v">[3 à 5 actions concrètes]</span>
+Chiffres utilisables (avec leur hypothèse) : <span class="v">[ex. 9 h/mois = 3 vidéos × 45 min]</span>
+
+<span class="h"># 1. STYLE DE RENDU</span>
+Références jointes : <span class="v">[vidéos]</span>. Analyse-les visuellement (pas seulement le texte) et
+écris d'abord les règles que tu en tires : rythme, cadrages, texte à l'écran, animations,
+transitions. Inspire-toi, ne copie pas.
+DA : fond <span class="v">[#0a0a0a]</span>, surface <span class="v">[#1a1a1a]</span>, accent <span class="v">[#f97316]</span>, police unique <span class="v">[Satoshi]</span>,
+logo et captures jointes. Utilise de vraies maquettes de l'app, animées, jamais de dessins génériques.
+Règles fixes :
+- pas de sous-titres ; seulement les phrases clés, mot fort en couleur d'accent ;
+- le texte ne passe jamais sur un visuel ;
+- chaque scène a son cadrage, les plans inclinés restent de passage ;
+- texte animé façon After Effects (rebond, scintillement, lettres, glitch), chaque animation a son son.
+Montre-moi une planche d'images clés avant tout export complet.
+
+<span class="h"># 2. COPYWRITING</span>
+Écris le script en 8 temps : accroche (la cible se reconnaît en 3 s) → douleur concrète →
+aggravation chiffrée + un trait d'humour → enjeu → solution (ce que fait l'app, dans l'ordre)
+→ résultat (qui reprend le mot de l'accroche) → CTA unique → chute qui fait rire.
+Tutoiement, phrases courtes. L'humour tape sur la douleur, se comprend en moins d'une seconde
+et parle à tout le monde. Culpabilité légère, jamais méprisante. Aucun chiffre sans hypothèse.
+Propose 2 versions, dis laquelle tu gardes et pourquoi, puis attends mon accord.
+
+<span class="h"># 3. VOIX ET SONS (ElevenLabs, clé dans la variable ELEVEN_KEY)</span>
+- Voix : modèle v4, un narrateur <span class="v">[masculin]</span>, balises d'émotion dans le texte.
+  Nom de marque écrit comme il se prononce. 2 prises par ligne, chacune retranscrite :
+  rejette toute prise où il manque un mot.
+- Rythme : coupe seulement dans les silences mesurés, accélère un peu, garde 1,5 s de
+  silence avant la chute.
+- Musique : une piste tension pour la douleur, une piste lumineuse qui démarre sur la bascule.
+- Bruitages : un son par animation de texte + un gag sonore sur la chute.
+- Mix : la voix devant (musique et bruitages baissent sous elle), zone calme sur la solution,
+  −14 LUFS. Retranscris le mix final : un mot manquant = un son à déplacer.
+
+<span class="h"># LIVRAISON</span>
+Rendu 4K réduit en 1080, 30 i/s, H.264 haute qualité, AAC 320k. Nomme les fichiers
+<span class="v">[marque]</span>-motion-<span class="v">[langue]</span>_<span class="v">[usage]</span>-<span class="v">[ratio]</span>_<span class="v">[largeur]x[hauteur]</span>_v<span class="v">[n]</span>.mp4, plus un poster.
+Avant de dire « fini » : durée, loudness, transcription complète et planche d'images vérifiées.</pre>
+</section>
+
+</body>
+</html>
