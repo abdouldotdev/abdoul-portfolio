@@ -1,0 +1,7 @@
+.env*
+.wrangler/
+dist/
+tests/
+scripts/
+README.md
+node_modules/

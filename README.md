@@ -89,20 +89,33 @@ La réfraction SVG est activée dans Chromium (dont Arc et Chrome). Safari et Fi
 
 `data/analytics.js` contient la configuration publique du projet PostHog **339255**, US Cloud ; `js/analytics.js` charge le SDK de manière asynchrone et observe les composants partagés. Une panne ou un bloqueur PostHog ne bloque pas le site.
 
-- Navigation : `$pageview` pour chaque page virtuelle, `view_engagement`, `$pageleave`, ouvertures/fermetures des feuilles et recherche.
-- Applications : sélection d’un projet, sorties App Store et liens externes, partage, captures, Dynamic Island.
-- Contact : canal, motif, validation, champs remplis et longueurs, demande d’ouverture d’un brouillon, étape LinkedIn prête. Ce sont des intentions et étapes de parcours, pas une confirmation de message envoyé.
-- Recherche : nombre de caractères, nombre de résultats et sélection d’un résultat ; aucune requête brute.
-- Usage : thème, langue, taille du texte, visibilité, carrousels et profondeur de défilement par paliers 25/50/75/100, autocapture masquée, clics répétés/inactifs, heatmaps et Core Web Vitals.
-- Qualité : erreurs JavaScript/rejets limités à leur type, fichier, ligne et colonne (dix maximum par chargement), sans texte arbitraire des erreurs ni logs console.
+- Navigation : `$pageview` pour chaque section, avec `section`, `section_key`, `$title` et une URL lisible comme `#section=projets-clients`. Ces liens ouvrent la section correspondante.
+- Actions : projet ou capture consultés, recherche et résultat choisi, lien externe ou App Store ouvert, partage demandé, contact ouvert, canal choisi, demande de contact et réglage modifié.
+- Les événements techniques de défilement, visibilité, engagement et autocapture sont désactivés. Les noms d’événements personnalisés sont en français pour être lisibles dans la liste des événements.
+- `person_profiles: 'always'` crée une fiche PostHog pour chaque visiteur, même anonyme, afin de consulter son parcours depuis la colonne « Person ». Sans connexion ou autre identification explicite, la personne reste désignée par un identifiant anonyme ; aucun nom ou courriel n’est déduit.
+- Dans le projet PostHog 339255, l’autocapture, les Web Vitals, les métriques de performance et la capture des logs console ont aussi été désactivés côté projet. Le replay reste activé.
 
-Le replay est activé côté SDK avec masquage des champs et exclusion des zones de texte du contact. Aucune description de projet, message, saisie de recherche, corps/entête réseau ou contenu du presse-papiers n’est envoyé. Les URL de télémétrie perdent leurs paramètres et fragments. Do Not Track et Global Privacy Control désactivent le chargement.
+Le replay est activé côté SDK avec masquage des champs et exclusion des zones de texte du contact. Aucune description de projet, message, saisie de recherche, corps/entête réseau ou contenu du presse-papiers n’est envoyé. Les URL de télémétrie perdent leurs paramètres ; seuls les fragments de section générés par le site sont conservés. Do Not Track et Global Privacy Control désactivent le chargement.
 
 Les pages `file:`, localhost, `.local`, `.test` et les navigateurs automatisés sont exclus par défaut. Pour une vérification intentionnelle, ajouter `?analytics=debug` ; les événements portent alors `environment=debug` et doivent être exclus des tableaux de production. Le test `node tests/analytics.cjs` remplace le SDK par un faux : aucune télémétrie n’est envoyée.
 
-**Configuration serveur à vérifier :** activer « Record user sessions » dans [les paramètres replay du projet](https://us.posthog.com/project/339255/settings#replay). Le projet, la région et le jeton ont été confirmés dans l’onglet PostHog existant d’Arc. Le connecteur renvoie 404 pour ce projet et le navigateur était utilisé par son propriétaire : le réglage replay serveur n’a donc pas été vérifié ou modifié. Le jeton fourni autorise l’ingestion, pas l’administration. Les bloqueurs, limites du forfait et règles serveur peuvent empêcher certains enregistrements.
+Le replay est activé dans [les paramètres du projet](https://us.posthog.com/project/339255/settings#replay). Les bloqueurs, limites du forfait et règles serveur peuvent empêcher certains enregistrements. Les anciens événements anonymes ne reçoivent pas rétroactivement une fiche « Person » ; les nouvelles fiches seront créées lorsque le nouveau code sera publié.
 
-Références : [configuration du SDK](https://posthog.com/docs/libraries/js/config), [session replay](https://posthog.com/docs/libraries/js/usage#session-replay).
+Références : [configuration du SDK](https://posthog.com/docs/libraries/js/config), [profils des personnes](https://posthog.com/docs/data/persons), [session replay](https://posthog.com/docs/libraries/js/usage#session-replay).
+
+## Publication avec Vercel
+
+Le dépôt est déjà lié au projet Vercel `abdoul-portfolio` via `.vercel/project.json`. La route d’aperçu `/resources/:resource` utilise `api/resource-preview.js` et la réécriture de `vercel.json`.
+
+Depuis la racine du dépôt :
+
+```sh
+vercel pull --yes --environment=production
+vercel build --prod
+vercel deploy --prebuilt --prod
+```
+
+`vercel build --prod` prépare `.vercel/output` sans publier. La dernière commande publie cet artefact en production. Si le dépôt est relié à GitHub, un push sur la branche de production déclenche aussi un déploiement automatique.
 
 ## Interactions iOS
 

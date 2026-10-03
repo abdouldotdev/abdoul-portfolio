@@ -1,3 +1,6 @@
 .DS_Store
 .vercel
 .env*
+dist/
+.wrangler/
+node_modules/

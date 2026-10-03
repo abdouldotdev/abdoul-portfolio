@@ -608,3 +608,23 @@ translationObserver=new MutationObserver(records=>{
  });
 });
 translationObserver.observe(screenEl,translationOptions);
+
+// Section URLs in PostHog open the corresponding view when followed.
+function openSectionLink(){
+ const slug=new URLSearchParams(location.hash.slice(1)).get('section');
+ if(!slug)return;
+ const names={accueil:'home',projets:'apps','mes-projets':'apps:my','projets-clients':'apps:client','open-source':'apps:open-source','a-propos':'about',ressources:'resources',document:'reader',cutiz:'lab',faithlock:'faithlock','appbiz-studio':'developer',contact:'contact',reglages:'settings',recherche:'search'};
+ const key=names[slug]||(slug.startsWith('projet-')?`project:${slug.slice(7)}`:slug.startsWith('open-source-')?`source:${slug.slice(12)}`:slug);
+ if(key==='home'){goHome();return}
+ if(key==='faithlock'){openFaithStore();return}
+ if(key==='developer'){openFaithStore();openDeveloper();return}
+ if(key==='contact'){openContact();return}
+ if(key==='settings'){openSettings();return}
+ if(key==='search'){openSpotlight();return}
+ if(key.startsWith('project:')){openProject(key.slice(8));return}
+ if(key.startsWith('source:')){openSourceProject(key.slice(7));return}
+ if(key==='apps'){openPage('apps');return}
+ if(key.startsWith('apps:')){const group=key.slice(5);if(['all','my','client','open-source'].includes(group))openPage('apps',group);return}
+ if(['about','resources','lab'].includes(key))openPage(key);
+}
+addEventListener('hashchange',openSectionLink);
